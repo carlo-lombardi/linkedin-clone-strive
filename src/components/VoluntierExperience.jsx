@@ -15,7 +15,7 @@ export default function VoluntierExperience() {
 			</div>
 			<div className=" m-3 d-flex align-items-center">
 				<CardElement
-					img="company img"
+					img="https://via.placeholder.com/100"
 					title="job title"
 					subtitle="job description"
 					text="job duration"

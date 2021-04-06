@@ -15,7 +15,7 @@ export default function Education() {
 			</div>
 			<div className=" m-3 d-flex align-items-center">
 				<CardElement
-					img="school img"
+					img="https://via.placeholder.com/100"
 					title="course title"
 					subtitle="course description"
 					text="course duration"
@@ -26,7 +26,7 @@ export default function Education() {
 			</div>
 			<div className=" m-3 d-flex align-items-center">
 				<CardElement
-					img="school img"
+					img="https://via.placeholder.com/100"
 					title="course title"
 					subtitle="course description"
 					text="course duration"

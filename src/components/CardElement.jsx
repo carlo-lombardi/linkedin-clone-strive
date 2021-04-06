@@ -17,7 +17,6 @@ export default function CardElement(props) {
 						<p>{props.subtitle}</p>
 						<p>{props.text}</p>
 					</Card.Text>
-					<Button variant="primary">Go somewhere</Button>
 				</Card.Body>
 			</Card>
 		</div>
