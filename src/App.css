@@ -36,3 +36,37 @@
     transform: rotate(360deg);
   }
 }
+
+#brand_logo{
+  color: rgb(10, 102, 194);
+  height: 40px!important;
+  width: 40px!important;
+}
+
+.list-group-item {
+  background-color: inherit!important;
+  border: 0px!important;
+}
+
+.navItems {
+  text-decoration: none !important;
+  font-size: 12px;
+}
+
+#root > div > nav > div {
+  flex-wrap: nowrap;
+}
+
+.navIcons {
+  width: 24px;
+  height: 24px;
+  color: rgb(102, 102, 102) !important;
+}
+
+.navText {
+  color: rgb(102, 102, 102) !important;
+}
+
+.header {
+  border: 1px solid
+}
