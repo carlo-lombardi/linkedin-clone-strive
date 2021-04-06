@@ -6,7 +6,7 @@ export default function Education() {
 	return (
 		<div>
 			<div className=" m-3 d-flex   align-items-center ">
-				<h3>Education</h3>
+				<h4>Education</h4>
 
 				{/* <i class="fas fa-plus"></i> */}
 				<p className="ml-auto">

@@ -4,7 +4,7 @@ import VoluntierExperience from "./VoluntierExperience";
 
 export default function ExperienceAndEdu() {
 	return (
-		<div className="border border-secondary rounded">
+		<div className="border border-secondary rounded m-1">
 			<Experience />
 			<hr />
 			<Education />

@@ -6,7 +6,7 @@ export default function VoluntierExperience() {
 	return (
 		<div>
 			<div className=" m-3 d-flex   align-items-center ">
-				<h3>Voluntier experience</h3>
+				<h4>Voluntier experience</h4>
 
 				{/* <i class="fas fa-plus"></i> */}
 				<p className="ml-auto">

@@ -7,7 +7,7 @@ export default function Experience() {
 	return (
 		<div>
 			<div className=" m-3 d-flex   align-items-center ">
-				<h3>Experience</h3>
+				<h4>Experience</h4>
 
 				{/* <i class="fas fa-plus"></i> */}
 				<p className="ml-auto">
