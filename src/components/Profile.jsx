@@ -7,6 +7,7 @@ import PeopleColumn from "./PeopleColumn";
 import Header from "./Header";
 import Highlights from "./Highlights";
 import Activity from "./Activity";
+import Footer from "./Footer";
 export default function Profile() {
   return (
     <div className="container">
@@ -26,7 +27,9 @@ export default function Profile() {
           <LearningColumn className="mb-2" />
         </div>
       </div>
-      <div className="row">{/* footer goes here */}</div>
+      <div className="row">
+        <Footer />
+      </div>
     </div>
   );
 }

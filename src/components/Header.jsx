@@ -4,10 +4,7 @@ import { BsThreeDots } from "react-icons/bs";
 
 export default function (props) {
   return (
-    <div
-      className="d-flex flex-column position-relative border bg-white"
-      style={{ height: "400px", borderRadius: "4px" }}
-    >
+    <div className="d-flex flex-column position-relative border bg-white h-100" style={{ borderRadius: "4px" }}>
       <div className="h-50">
         <Image className="h-100 w-100" src="https://picsum.photos/750/200" />
       </div>
@@ -21,7 +18,7 @@ export default function (props) {
           </Button>
           <BsThreeDots />
         </div>
-        <div className="d-flex flex-wrap p-3 justify-content-between">
+        <div className="d-flex p-3 justify-content-between">
           <div className="d-flex flex-column">
             <h5>Joe Biden</h5>
             <h6>President of united states of america</h6>
