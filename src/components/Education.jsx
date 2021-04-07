@@ -1,11 +1,11 @@
 import React from "react";
-import CardElement from "./CardElement";
+import Course from "./Course";
 import { FaPen, FaPlus } from "react-icons/fa";
 
 export default function Education() {
 	return (
 		<div>
-			<div className=" m-3 d-flex   align-items-center ">
+			<div className=" m-3 p-3 d-flex   align-items-center ">
 				<h4>Education</h4>
 
 				{/* <i class="fas fa-plus"></i> */}
@@ -13,8 +13,8 @@ export default function Education() {
 					<FaPlus />
 				</p>
 			</div>
-			<div className=" m-3 d-flex align-items-center">
-				<CardElement
+			<div className=" m-3 p-3 d-flex align-items-center">
+				<Course
 					img="https://via.placeholder.com/100"
 					title="course title"
 					subtitle="course description"
@@ -24,8 +24,8 @@ export default function Education() {
 					<FaPen />
 				</p>
 			</div>
-			<div className=" m-3 d-flex align-items-center">
-				<CardElement
+			<div className=" m-3 p-3 d-flex align-items-center">
+				<Course
 					img="https://via.placeholder.com/100"
 					title="course title"
 					subtitle="course description"
