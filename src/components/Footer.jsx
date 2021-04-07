@@ -4,33 +4,33 @@ import { FaCog, FaQuestionCircle, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
 	return (
-		<Container>
-			<Row>
+		<>
+			<div>
 				<h4 className="text-primary pl-5">
 					Linked
 					<FaLinkedin />
 				</h4>
-			</Row>
-			<Row className="fs-6 fw-bold text-muted">
-				<Col xs={2} className="p-5">
+			</div>
+			<div className="fs-6 fw-bold text-muted">
+				<div className=" xs-2 p-5">
 					<p>About</p>
 					<p>Community Guidelines</p>
 					<p>Privacy & Terms</p>
 					<p>Sales Solution</p>
-				</Col>
-				<Col xs={2} className="p-5">
+				</div>
+				<div className="xs-2 p-5">
 					<p>Accessibility</p>
 					<p>Careers</p>
 					<p>Ad Choices</p>
 					<p>Mobile</p>
-				</Col>
-				<Col xs={2} className="p-5">
+				</div>
+				<div className="xs-2 p-5">
 					<p>Talent Solutions</p>
 					<p>Marketing Solutions</p>
 					<p>Advertising</p>
 					<p>Small Business</p>
-				</Col>
-				<Col xs={3} className="p-5">
+				</div>
+				<div className="p-5 xs-3">
 					<div className="pb-5">
 						<p className="mb-0">
 							<FaQuestionCircle />
@@ -44,8 +44,8 @@ export default function Footer() {
 						</p>
 						<small>Go to your seting</small>
 					</div>
-				</Col>
-				<Col xs={3} className="p-5">
+				</div>
+				<div className="p-5 xs-3">
 					<div>
 						<Form.Group controlId="exampleForm.ControlSelect1">
 							<Form.Label>Select Language</Form.Label>
@@ -62,8 +62,8 @@ export default function Footer() {
 							</Form.Control>
 						</Form.Group>
 					</div>
-				</Col>
-			</Row>
-		</Container>
+				</div>
+			</div>
+		</>
 	);
 }
