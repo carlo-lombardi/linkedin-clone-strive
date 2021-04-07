@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Nav from "./components/Nav";
 import Profile from "./components/Profile";
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Router>
         <Nav />
         <Route path="/profile" exact component={Profile} />
+        <Footer />
       </Router>
     </div>
   );
