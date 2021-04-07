@@ -6,10 +6,10 @@ export default function Footer() {
 	return (
 		<Container>
 			<Row>
-				<h5 className="text-primary pl-5">
+				<h4 className="text-primary pl-5">
 					Linked
 					<FaLinkedin />
-				</h5>
+				</h4>
 			</Row>
 			<Row className="fs-6 fw-bold text-muted">
 				<Col xs={2} className="p-5">
