@@ -11,10 +11,11 @@ export default function PeopleColumn() {
   }, []);
   console.log("profilesData", profilesData);
   function mapProfiles(limit) {
-    return profilesData.slice(0, limit).map((profile) => {
+    return profilesData.slice(92, limit).map((profile) => {
       return (
         <PeopleItem
           key={profile._id}
+          id={profile._id}
           image={profile.image}
           name={profile.name}
           surname={profile.surname}
@@ -26,7 +27,7 @@ export default function PeopleColumn() {
   return (
     <div className="p-3 my-2">
       <h5 className="mt-2 text-left">People also viewed</h5>
-      <div className="d-flex flex-column my-4">{mapProfiles(10)}</div>
+      <div className="d-flex flex-column my-4">{mapProfiles(104)}</div>
     </div>
   );
 }
