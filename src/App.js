@@ -5,6 +5,7 @@ import Nav from "./components/Nav";
 import Profile from "./components/Profile";
 import Header from "./components/Header";
 import Highlights from "./components/Highlights";
+import Activity from "./components/Activity";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Nav />
         <Header/>
         <Highlights/>
+        <Activity/>
         <Route path="/profile" exact component={Profile} />
       </Router>
     </div>
