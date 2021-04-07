@@ -9,12 +9,12 @@ class Highlights extends React.Component {
           <Row className="pt-3 pl-3">
             <p>Highlights</p>
           </Row>
-          <Row>
+          <Row className="pl-3">
               <Col className="text-center col-1 pb-3">
                 <MdChat style={{"height" : "100%", "width" : "50px"}}/>
               </Col>
               <Col>
-                <p className="boldText mb-0">Reach out to Sichao for...</p>
+                <p className="boldText mb-0">Reach out to User for...</p>
                 <p>Probono consulting and volunteering, Joining a nonprofit board.</p>
               </Col>
           </Row>
