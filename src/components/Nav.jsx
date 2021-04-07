@@ -45,7 +45,7 @@ class NavBar extends React.Component {
               <ListGroup.Item className="p-0 mx-2 navItems"><a href="#"><Container className="mx-3 p-0 flex-column"><FaBell className="navIcons"/><span className="navText">Notifications</span></Container></a></ListGroup.Item>
               <ListGroup.Item className="p-0 mx-2 navItems"><a href="#"><Container className="mx-3 p-0 flex-column"><FaUserCircle className="navIcons"/><span className="navText">Me</span></Container></a></ListGroup.Item>
               <ListGroup.Item className="p-0 mx-2 navItems"><a href="#"><Container className="mx-3 p-0 flex-column"><CgMenuGridR className="navIcons"/><span className="navText">Work</span></Container></a></ListGroup.Item>
-              <ListGroup.Item className="p-0 mx-2 navItems"><a href="#"><Container className="mx-3 p-0 flex-column"><FaSign className="navIcons"/><span className="navText">Job</span></Container></a></ListGroup.Item>
+              <ListGroup.Item className="p-0 mx-2 navItems"><a href="#"><Container className="mx-3 p-0 flex-column"><FaSign className="navIcons"/><span className="navText">Hire</span></Container></a></ListGroup.Item>
             </ListGroup>
           </Container>
         </Row>
