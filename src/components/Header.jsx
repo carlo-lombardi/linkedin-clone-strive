@@ -71,7 +71,7 @@ class Header extends React.Component {
               ...
             </Button>
           </Row>
-          <Row>
+          <Row className="px-3">
             <Col className="flex-column">
               <p>
                 {this.state.user.name} {this.state.user.surname}
