@@ -4,12 +4,18 @@ import Acomplishments from "./Acomplishments";
 import Interests from "./Interests";
 import LearningColumn from "./LearningColumn";
 import PeopleColumn from "./PeopleColumn";
+import Header from "./Header";
+import Highlights from "./Highlights";
+import Activity from "./Activity";
 export default function Profile() {
   return (
     <div className="container">
-      <div className="row vh-100">
+      <div className="row">
         <div className="left col d-flex flex-column col-12 col-lg-8 px-2">
           {/* components on left go here */}
+          <Header />
+          <Highlights />
+          <Activity />
           <ExperienceAndEdu />
           <Skills />
           <Acomplishments />
