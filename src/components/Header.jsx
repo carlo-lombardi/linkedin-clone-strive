@@ -20,10 +20,12 @@ export default function (props) {
         </div>
         <div className="d-flex p-3 justify-content-between">
           <div className="d-flex flex-column">
-            <h5>Joe Biden</h5>
-            <h6>President of united states of america</h6>
+            <h5>
+              {props.name} {props.surname}
+            </h5>
+            <h6>{props.title}</h6>
             <p>
-              Washington D.C · <span>500+ connections · </span>
+              {props.area} <span>500+ connections · </span>
               <span className="text-primary font-weight-bold">Contact info</span>
             </p>
           </div>
@@ -52,8 +54,8 @@ export default function (props) {
       <Image
         roundedCircle
         className="position-absolute border"
-        src="https://picsum.photos/150/150"
-        style={{ top: "30%", left: "2%" }}
+        src={props.image}
+        style={{ top: "30%", left: "2%", height: "150px" }}
       />
     </div>
   );

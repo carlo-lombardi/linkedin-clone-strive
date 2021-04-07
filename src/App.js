@@ -7,14 +7,12 @@ import Header from "./components/Header";
 import Highlights from "./components/Highlights";
 import Activity from "./components/Activity";
 
-
 function App() {
   return (
     <div className="App">
       <Router>
         <Nav />
-        <Route path="/profile" exact component={Profile} />
-
+        <Route path="/profile/:profileID" component={Profile} />
       </Router>
     </div>
   );

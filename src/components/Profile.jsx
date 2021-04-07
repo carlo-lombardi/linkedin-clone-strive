@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+import { getProfileById } from "../functions/functions";
 import ExperienceAndEdu from "./ExperienceAndEdu";
 import Skills from "./Skills";
 import Acomplishments from "./Acomplishments";
@@ -8,13 +10,27 @@ import Header from "./Header";
 import Highlights from "./Highlights";
 import Activity from "./Activity";
 import Footer from "./Footer";
-export default function Profile() {
+const auth =
+  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjMWE0NjZmZDIyODAwMTUzZmRiYjIiLCJpYXQiOjE2MTc2OTczNTEsImV4cCI6MTYxODkwNjk1MX0.z50JfhhjKZpYGwCvaA1tJAjx8DT5qtEdJK-7K47cYAw";
+export default function Profile(props) {
+  const [profileData, updateProfileData] = useState("");
+  useEffect(async () => {
+    updateProfileData(await getProfileById(props.match.params.profileID, auth));
+  }, [props.match.params.profileID]);
   return (
     <div className="container">
       <div className="row">
         <div className="left col d-flex flex-column col-12 col-lg-8 px-2">
           {/* components on left go here */}
-          <Header />
+          <Header
+            name={profileData.name}
+            surname={profileData.surname}
+            email={profileData.email}
+            title={profileData.title}
+            area={profileData.area}
+            bio={profileData.bio}
+            image={profileData.image}
+          />
           <Highlights />
           <Activity />
           <ExperienceAndEdu />
