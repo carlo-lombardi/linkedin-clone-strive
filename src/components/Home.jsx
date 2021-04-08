@@ -22,7 +22,7 @@ export default function Home() {
           {/* mid columns go here  */}
           <PostsContainer postsData={data} refreshData={fetchData} auth={auth} />
         </div>
-        <div className="right col col-12 col-md-4 bg-warning">
+        <div className="right col col-12 col-md-4">
           {/* right columns go here */}
           <Recomandation />
           <Courses />
