@@ -8,7 +8,6 @@ import { getAllPosts, getProfileById } from "../functions/functions";
 import UserInfo from "./UserInfo";
 import Discover from "./Discover";
 import CreatePost from "./CreatePost";
-import { differenceInDays } from "date-fns";
 const userID = "606c1a466fd22800153fdbb2";
 const auth =
 	"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjMWE0NjZmZDIyODAwMTUzZmRiYjIiLCJpYXQiOjE2MTc2OTczNTEsImV4cCI6MTYxODkwNjk1MX0.z50JfhhjKZpYGwCvaA1tJAjx8DT5qtEdJK-7K47cYAw";
