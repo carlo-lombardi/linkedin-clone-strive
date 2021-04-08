@@ -28,7 +28,11 @@ class RecomandedItem extends React.Component {
 							className="rounded-pill my-1 font-weight-bold"
 							variant="outline-secondary"
 							style={{ width: "40%" }}
-							onClick={() => this.setState({ follow: !this.state.follow })}
+							onClick={() => {
+								this.state.follow === "false"
+									? this.setState({ follow: "true" })
+									: this.setState({ follow: "false" });
+							}}
 						>
 							{this.state.follow === "false" ? (
 								<p className="m-0">

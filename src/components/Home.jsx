@@ -1,4 +1,5 @@
 import Recomandation from "./Recomandation";
+import Courses from "./Courses";
 
 import PostsContainer from "./PostsContainer";
 import { useState, useEffect } from "react";
@@ -24,6 +25,7 @@ export default function Home() {
         <div className="right col col-12 col-md-4 bg-warning">
           {/* right columns go here */}
           <Recomandation />
+          <Courses />
         </div>
       </div>
     </div>
