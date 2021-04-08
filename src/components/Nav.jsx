@@ -5,6 +5,7 @@ import { BsFillBriefcaseFill, BsFillChatDotsFill } from "react-icons/bs";
 import { ImSearch } from "react-icons/im";
 import { CgMenuGridR } from "react-icons/cg";
 import { Container, Form, FormControl, InputGroup, ListGroup, Navbar, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 class NavBar extends React.Component {
   render() {
@@ -31,8 +32,13 @@ class NavBar extends React.Component {
               <ListGroup.Item className="p-0 mx-2 navItems">
                 <a href="#">
                   <Container className="mx-3 p-0 flex-column">
-                    <AiFillHome className="navIcons" />
-                    <span className="navText">Home</span>
+                    <Link to="/">
+                      <AiFillHome className="navIcons" />
+                    </Link>
+
+                    <Link to="/" className="navText">
+                      Home
+                    </Link>
                   </Container>
                 </a>
               </ListGroup.Item>

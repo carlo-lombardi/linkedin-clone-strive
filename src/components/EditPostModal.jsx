@@ -10,6 +10,7 @@ export default function Example(props) {
   async function submitEditedPost() {
     console.log(postText);
     await editPost(props.postID, props.auth, postText);
+    props.handleClose();
     await props.refreshData();
   }
   return (
