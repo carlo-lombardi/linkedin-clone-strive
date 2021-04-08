@@ -1,4 +1,5 @@
 import Recomandation from "./Recomandation";
+import Courses from "./Courses";
 
 export default function Home() {
 	return (
@@ -13,6 +14,7 @@ export default function Home() {
 				<div className="right col col-12 col-md-4 bg-warning">
 					{/* right columns go here */}
 					<Recomandation />
+					<Courses />
 				</div>
 			</div>
 		</div>
