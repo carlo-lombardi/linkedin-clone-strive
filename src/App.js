@@ -6,6 +6,7 @@ import Profile from "./components/Profile";
 import Header from "./components/Header";
 import Highlights from "./components/Highlights";
 import Activity from "./components/Activity";
+import Home from "./components/Home";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Router>
         <Nav />
         <Route path="/profile/:profileID" component={Profile} />
+        <Route path="/" component={Home} />
       </Router>
     </div>
   );
