@@ -1,5 +1,6 @@
 import Recomandation from "./Recomandation";
 import Courses from "./Courses";
+import FooterLinks from "./FooterLinks";
 
 export default function Home() {
 	return (
@@ -15,6 +16,7 @@ export default function Home() {
 					{/* right columns go here */}
 					<Recomandation />
 					<Courses />
+					<FooterLinks />
 				</div>
 			</div>
 		</div>
