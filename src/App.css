@@ -74,3 +74,38 @@ body {
   width: 50px;
   height: 50px;
 }
+
+.post-icons{
+  width: 24px!important;
+  height: 24px!important;
+  vertical-align: top!important;
+  margin-right: 1%;
+}
+
+.photo-icon{
+  color: lightskyblue
+}
+
+.video-icon{
+  color: lightgreen
+}
+
+.event-icon{
+  color: lightsalmon
+}
+
+.article-icon{
+  color: lightcoral
+}
+
+.no-decoration:hover{
+  text-decoration: none;
+}
+
+.shade:hover{
+  background-color: lightgrey
+}
+
+.small-text{
+  font-size: 12px;
+}
