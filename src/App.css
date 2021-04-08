@@ -97,3 +97,15 @@ body {
 .article-icon{
   color: lightcoral
 }
+
+.no-decoration:hover{
+  text-decoration: none;
+}
+
+.shade:hover{
+  background-color: lightgrey
+}
+
+.small-text{
+  font-size: 12px;
+}
