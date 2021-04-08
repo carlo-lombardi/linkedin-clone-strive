@@ -1,6 +1,5 @@
 import Recomandation from "./Recomandation";
 import Courses from "./Courses";
-import FooterLinks from "./FooterLinks";
 
 import PostsContainer from "./PostsContainer";
 import { useState, useEffect } from "react";
@@ -49,7 +48,6 @@ export default function Home() {
 					{/* right columns go here */}
 					<Recomandation />
 					<Courses />
-					<FooterLinks />
 				</div>
 			</div>
 		</div>
