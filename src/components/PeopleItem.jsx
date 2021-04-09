@@ -8,7 +8,7 @@ export default function PeopleItem(props) {
         <Image roundedCircle fluid src={props.image} alt="" />
       </div>
       <div className="col col-10 py-2 flex-column d-flex px-2">
-        <Link to={`/profile/` + props.id}>
+        <Link className="no-decoration" to={`/profile/` + props.id}>
           <div className="name-wrapper d-flex" style={{ lineHeight: "2px" }}>
             <p className="font-weight-bold text-left m-0">{`${props.name} ${props.surname}`}</p>
             <p className="mx-1">·</p>

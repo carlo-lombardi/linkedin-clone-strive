@@ -13,7 +13,7 @@ class NavBar extends React.Component {
       <Navbar className="p-0" bg="light" expand="lg">
         <Row className="mx-auto flex-row">
           <Container className="flex-row justify-content-start">
-            <Navbar.Brand href="#home" className="mr-1">
+            <Navbar.Brand href="/" className="mr-1">
               <FaLinkedin id="brand_logo" />
             </Navbar.Brand>
             <Form className="my-2 mr-5">
@@ -36,7 +36,7 @@ class NavBar extends React.Component {
                       <AiFillHome className="navIcons" />
                     </Link>
 
-                    <Link to="/" className="navText">
+                    <Link to="/" className="navText no-decoration">
                       Home
                     </Link>
                   </Container>
