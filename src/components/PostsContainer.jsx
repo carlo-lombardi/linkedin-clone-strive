@@ -21,6 +21,7 @@ export default function PostsContainer(props) {
             auth={props.auth}
             refreshData={props.refreshData}
             userID={post.user._id}
+            postImage={post.image}
           />
         );
       });

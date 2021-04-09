@@ -2,15 +2,20 @@ import React from "react";
 import { Button, Image } from "react-bootstrap";
 import { TiUserAdd } from "react-icons/ti";
 import { BsFillBookmarkFill } from "react-icons/bs";
-import { Link } from "react-router-dom"
+import { Form } from "react-bootstrap";
+import { submitProfilePicture } from "../functions/functions";
 
 export default (props) => {
+  async function changeProfilePicture(e) {
+    console.log(e.target.files[0]);
+    await submitProfilePicture(props.userID, props.auth, e.target.files[0]);
+    await props.refreshData();
+  }
   return (
-    <div className="bg-white border round-border">
+    <div className="bg-white border" style={{ borderRadius: "4px" }}>
       <div>
-        <Image className="h-100 w-100" src="https://picsum.photos/750/200" style={{ "border-radius": "10px 10px 0px 0px" }} />
-        <Link className="text-center no-decoration text-dark" to={`/profile/` + props.profileData._id}>
-        {/* <a href="#" className="flex-column text-center text-dark no-decoration"> */}
+        <Image className="h-100 w-100" src="https://picsum.photos/750/200" style={{ "border-radius": "4px 4px" }} />
+        <a href="#" className="flex-column text-center text-dark no-decoration">
           <Image
             src={props.profileData.image}
             style={{
@@ -22,9 +27,13 @@ export default (props) => {
               width: "64px",
             }}
           ></Image>
+          <Form onChange={changeProfilePicture}>
+            <Form.File id="custom-file" label="" custom className="text-left" data-browse="Change profile pic" />
+          </Form>
+
           <h4>{props.profileData.name + " " + props.profileData.surname}</h4>
           <p>{props.profileData.title}</p>
-        {/* </a> */}</Link>
+        </a>
       </div>
       <div className="border-top p-2 shade">
         <a href="#" className="text-left d-flex w-100 justify-content-between text-dark no-decoration">
