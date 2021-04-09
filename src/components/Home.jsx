@@ -25,12 +25,12 @@ export default function Home() {
 	return (
 		<div className="container">
 			<div className="row vh-100 pt-2">
-				<div className="left col d-none col-12 d-lg-block col-md-2">
+				<div className="left col d-none col-12 d-lg-block col-md-2 px-0 mt-2">
 					{/* left columns go here */}
 					<UserInfo profileData={profileData} />
 					<Discover />
 				</div>
-				<div className="mid col-12 col-md-6">
+				<div className="mid col-12 col-md-6 mt-2">
 					{/* mid columns go here  */}
 					<CreatePost
 						profileData={profileData}

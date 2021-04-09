@@ -67,7 +67,7 @@ export default function Post(props) {
           </Button>
         </div>
       </div>
-      <p>{props.text}</p>
+      <p className="text-break">{props.text}</p>
       <div className="border-top pt-3 d-flex ">
         <p className="d-flex align-items-center mr-3 ml-2">
           <AiOutlineLike style={{ transform: "scale(1.8)" }} className="mr-3" />

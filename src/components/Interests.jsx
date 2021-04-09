@@ -4,7 +4,7 @@ import Interes from "./Interes";
 
 export default function Interests() {
   return (
-    <div className=" border border-secondary rounded m-1 bg-white">
+    <div className=" border bg-white px-3 pt-3 rounded mb-4">
       <h4 className="m-3">Interests</h4>
       <Row>
         <Col xs={6}>
@@ -34,7 +34,6 @@ export default function Interests() {
           <Interes img="https://via.placeholder.com/100" title="Training Focus" members="181.693 members" />
         </Col>
       </Row>
-      ;
     </div>
   );
 }

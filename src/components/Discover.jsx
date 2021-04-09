@@ -3,7 +3,7 @@ import { BsPlus } from "react-icons/bs";
 
 export default (props) => {
   return (
-    <div className="bg-white border" style={{ borderRadius: "4px" }}>
+    <div className="bg-white border my-2" style={{ borderRadius: "4px" }}>
       <div className="px-2 mt-1">
         <a href="#" className="no-decoration small-text">
           Groups
