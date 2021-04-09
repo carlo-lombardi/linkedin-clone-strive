@@ -53,7 +53,6 @@ export default function Post(props) {
     await props.refreshData();
   };
   const postDate = new Date(props.updatedTime);
-  const nowDate = new Date(Date.now());
   return (
     <div className="p-3 my-2 bg-white border round-border">
       <div className="d-flex justify-content-between align-items-center my-2 mb-3">
@@ -62,7 +61,7 @@ export default function Post(props) {
           <div className="d-flex flex-column">
             <h6>{props.name + " " + props.surname}</h6>
             <small className="font-italic">@{props.username}</small>
-            <small>{timeSince(postDate)}</small>
+            {props.updatedTime !== undefined && <small>{timeSince(postDate)}</small>}
           </div>
         </Link>
         <div>
