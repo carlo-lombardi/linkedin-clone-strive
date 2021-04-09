@@ -14,35 +14,33 @@ import { useState } from "react";
 
 const currentUserID = "606c1a466fd22800153fdbb2";
 
-var DURATION_IN_SECONDS = {
-  epochs: ["year", "month", "day", "hour", "minute"],
-  year: 31536000,
-  month: 2592000,
-  day: 86400,
-  hour: 3600,
-  minute: 60,
-};
+const epochs = [
+  ["year", 31536000],
+  ["month", 2592000],
+  ["day", 86400],
+  ["hour", 3600],
+  ["minute", 60],
+  ["second", 1],
+];
 
-function getDuration(seconds) {
-  var epoch, interval;
-
-  for (var i = 0; i < DURATION_IN_SECONDS.epochs.length; i++) {
-    epoch = DURATION_IN_SECONDS.epochs[i];
-    interval = Math.floor(seconds / DURATION_IN_SECONDS[epoch]);
+const getDuration = (timeAgoInSeconds) => {
+  for (let [name, seconds] of epochs) {
+    const interval = Math.floor(timeAgoInSeconds / seconds);
     if (interval >= 1) {
       return {
         interval: interval,
-        epoch: epoch,
+        epoch: name,
       };
     }
   }
-}
-function timeSince(date) {
-  var seconds = Math.floor((new Date() - new Date(date)) / 1000);
-  var duration = getDuration(seconds);
-  var suffix = duration.interval > 1 || duration.interval === 0 ? "s" : "";
-  return duration.interval + " " + duration.epoch + suffix + " ago";
-}
+};
+
+const timeAgo = (date) => {
+  const timeAgoInSeconds = Math.floor((new Date() - new Date(date)) / 1000);
+  const { interval, epoch } = getDuration(timeAgoInSeconds);
+  const suffix = interval === 1 ? "" : "s";
+  return `${interval} ${epoch}${suffix} ago`;
+};
 
 export default function Post(props) {
   const [show, setShow] = useState(false);
@@ -61,7 +59,7 @@ export default function Post(props) {
           <div className="d-flex flex-column">
             <h6>{props.name + " " + props.surname}</h6>
             <small className="font-italic">@{props.username}</small>
-            {props.updatedTime !== undefined && <small>{timeSince(postDate)}</small>}
+            {props.updatedTime !== undefined && props.updatedTime !== null && <small>{timeAgo(postDate)}</small>}
           </div>
         </Link>
         <div>
