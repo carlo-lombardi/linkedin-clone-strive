@@ -27,7 +27,7 @@ export default function Recomandation() {
 		});
 	}
 	return (
-		<div className="p-3 my-2 border bg-white " style={{ borderRadius: "4px" }}>
+		<div className="p-3 my-2 border bg-white round-border">
 			<div className="d-flex justify-content-between">
 				<h5 className="mt-2 text-left">Add to your feed</h5>
 				<p className="my-2">
@@ -36,7 +36,7 @@ export default function Recomandation() {
 			</div>
 			<div className="d-flex flex-column my-4">{mapProfiles(104)}</div>
 			<div>
-				<p>
+				<p className="mb-0">
 					View all recommendations  <FaArrowRight />
 				</p>
 			</div>

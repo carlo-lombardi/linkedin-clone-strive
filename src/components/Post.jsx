@@ -23,7 +23,7 @@ export default function Post(props) {
     await props.refreshData();
   };
   return (
-    <div className="p-3 my-2 bg-white border" style={{ borderRadius: "8px" }}>
+    <div className="p-3 my-2 bg-white border round-border">
       <div className="d-flex justify-content-between align-items-center my-2 mb-3">
         <Link className="d-flex text-decoration-none" style={{ color: "black" }} to={`/profile/` + props.userID}>
           <Image roundedCircle className="mr-3" src={props.image} style={{ height: "50px", width: "50px" }} />

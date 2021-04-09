@@ -4,7 +4,7 @@ import ActivityItem from "./ActivityItem";
 
 export default function Activity(props) {
   return (
-    <div className="border bg-white px-3 pt-3" style={{ borderRadius: "4px" }}>
+    <div className="border bg-white px-3 pt-3 round-border">
       <h4>Activity</h4>
       <div className="row row-cols-1 row-cols-md-2 mt-4 border-bottom">
         <ActivityItem text="Game of as rest time eyes with of this it" image="https://picsum.photos/seed/2/30/30" />

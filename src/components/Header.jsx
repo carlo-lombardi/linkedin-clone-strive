@@ -4,7 +4,7 @@ import { BsThreeDots } from "react-icons/bs";
 
 export default function (props) {
   return (
-    <div className="d-flex flex-column position-relative border bg-white h-100" style={{ borderRadius: "4px" }}>
+    <div className="d-flex flex-column position-relative border bg-white h-100 round-border">
       <div className="h-50">
         <Image className="h-100 w-100" src="https://picsum.photos/750/200" />
       </div>
