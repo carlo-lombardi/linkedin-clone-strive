@@ -14,31 +14,34 @@ import { useState } from "react";
 
 const currentUserID = "606c1a466fd22800153fdbb2";
 
+var DURATION_IN_SECONDS = {
+  epochs: ["year", "month", "day", "hour", "minute"],
+  year: 31536000,
+  month: 2592000,
+  day: 86400,
+  hour: 3600,
+  minute: 60,
+};
+
+function getDuration(seconds) {
+  var epoch, interval;
+
+  for (var i = 0; i < DURATION_IN_SECONDS.epochs.length; i++) {
+    epoch = DURATION_IN_SECONDS.epochs[i];
+    interval = Math.floor(seconds / DURATION_IN_SECONDS[epoch]);
+    if (interval >= 1) {
+      return {
+        interval: interval,
+        epoch: epoch,
+      };
+    }
+  }
+}
 function timeSince(date) {
-  var seconds = Math.floor((new Date() - date) / 1000);
-
-  var interval = seconds / 31536000;
-
-  if (interval > 1) {
-    return Math.floor(interval) + " years";
-  }
-  interval = seconds / 2592000;
-  if (interval > 1) {
-    return Math.floor(interval) + " months";
-  }
-  interval = seconds / 86400;
-  if (interval > 1) {
-    return Math.floor(interval) + " days";
-  }
-  interval = seconds / 3600;
-  if (interval > 1) {
-    return Math.floor(interval) + " hours";
-  }
-  interval = seconds / 60;
-  if (interval > 1) {
-    return Math.floor(interval) + " minutes";
-  }
-  return Math.floor(seconds) + " seconds";
+  var seconds = Math.floor((new Date() - new Date(date)) / 1000);
+  var duration = getDuration(seconds);
+  var suffix = duration.interval > 1 || duration.interval === 0 ? "s" : "";
+  return duration.interval + " " + duration.epoch + suffix + " ago";
 }
 
 export default function Post(props) {
@@ -58,8 +61,8 @@ export default function Post(props) {
           <Image roundedCircle className="mr-3" src={props.image} style={{ height: "50px", width: "50px" }} />
           <div className="d-flex flex-column">
             <h6>{props.name + " " + props.surname}</h6>
-            <small>@{props.username}</small>
-            <small>{timeSince(nowDate - postDate)}</small>
+            <small className="font-italic">@{props.username}</small>
+            <small>{timeSince(postDate)}</small>
           </div>
         </Link>
         <div>

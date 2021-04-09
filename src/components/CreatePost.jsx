@@ -79,7 +79,7 @@ export default (props) => {
         <div className="col">
           <Button className="text-nowrap" variant="light">
             <RiArticleFill className="post-icons article-icon" />
-            Write Article
+            Submit
           </Button>
         </div>
       </div>

@@ -16,7 +16,7 @@ export default function PostsContainer(props) {
             text={post.text}
             name={post.user.name}
             surname={post.user.surname}
-            updatedTime={post.updatedAt}
+            updatedTime={post.createdAt}
             image={post.user.image}
             auth={props.auth}
             refreshData={props.refreshData}
@@ -26,5 +26,5 @@ export default function PostsContainer(props) {
         );
       });
   }
-  return <div className="d-flex flex-column">{getPosts(props.postsData.length - 15, props.postsData.length)}</div>;
+  return <div className="d-flex flex-column">{getPosts(props.postsData.length - 20, props.postsData.length)}</div>;
 }
