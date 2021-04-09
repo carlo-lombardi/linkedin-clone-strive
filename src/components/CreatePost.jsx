@@ -1,23 +1,28 @@
 import React from "react";
-import { Button, Image } from "react-bootstrap";
+import { Button, Image, Form } from "react-bootstrap";
 import { HiOutlinePhotograph } from "react-icons/hi";
 import { ImCalendar, ImPlay } from "react-icons/im";
 import { RiArticleFill } from "react-icons/ri";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
 import { useState } from "react";
-import { submitPost } from "../functions/functions";
+import { submitPost, submitPostPicture } from "../functions/functions";
 
 export default (props) => {
   const [postText, setPostText] = useState("");
+  const [postImage, setPostImage] = useState("");
   async function handleSubmit(event) {
     if (event.key === "Enter" && postText !== "") {
       event.target.value = "";
       console.log("trying to submit");
-      await submitPost(props.auth, postText);
+      const postID = await submitPost(props.auth, postText);
+      if (postImage !== "") {
+        await submitPostPicture(postID, props.auth, postImage);
+      }
       await props.refreshData();
     }
   }
+  async function uploadPostImage(event) {}
   return (
     <div className="bg-white border px-3" style={{ borderRadius: "4px" }}>
       <div className="row my-2">
@@ -45,10 +50,19 @@ export default (props) => {
       </div>
       <div className="row my-2">
         <div className="col">
-          <Button className="text-nowrap" variant="light">
-            <HiOutlinePhotograph className="post-icons photo-icon" />
-            Photo
-          </Button>
+          <Form
+            onChange={(event) => {
+              setPostImage(event.target.files[0]);
+            }}
+          >
+            <Form.File
+              id="custom-file"
+              label={<HiOutlinePhotograph className="post-icons photo-icon " />}
+              custom
+              className=""
+              data-browse="Picture"
+            />
+          </Form>
         </div>
         <div className="col">
           <Button className="text-nowrap" variant="light">

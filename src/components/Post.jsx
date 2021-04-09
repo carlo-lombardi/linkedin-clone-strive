@@ -14,6 +14,33 @@ import { useState } from "react";
 
 const currentUserID = "606c1a466fd22800153fdbb2";
 
+function timeSince(date) {
+  var seconds = Math.floor((new Date() - date) / 1000);
+
+  var interval = seconds / 31536000;
+
+  if (interval > 1) {
+    return Math.floor(interval) + " years";
+  }
+  interval = seconds / 2592000;
+  if (interval > 1) {
+    return Math.floor(interval) + " months";
+  }
+  interval = seconds / 86400;
+  if (interval > 1) {
+    return Math.floor(interval) + " days";
+  }
+  interval = seconds / 3600;
+  if (interval > 1) {
+    return Math.floor(interval) + " hours";
+  }
+  interval = seconds / 60;
+  if (interval > 1) {
+    return Math.floor(interval) + " minutes";
+  }
+  return Math.floor(seconds) + " seconds";
+}
+
 export default function Post(props) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -22,6 +49,8 @@ export default function Post(props) {
     await deletePost(event.currentTarget.id, props.auth);
     await props.refreshData();
   };
+  const postDate = new Date(props.updatedTime);
+  const nowDate = new Date(Date.now());
   return (
     <div className="p-3 my-2 bg-white border" style={{ borderRadius: "8px" }}>
       <div className="d-flex justify-content-between align-items-center my-2 mb-3">
@@ -30,7 +59,7 @@ export default function Post(props) {
           <div className="d-flex flex-column">
             <h6>{props.name + " " + props.surname}</h6>
             <small>@{props.username}</small>
-            <small>{props.updatedTime.slice(0, 10)}</small>
+            <small>{timeSince(nowDate - postDate)}</small>
           </div>
         </Link>
         <div>
@@ -67,7 +96,9 @@ export default function Post(props) {
           </Button>
         </div>
       </div>
-      <p>{props.text}</p>
+      <p className="w-100 text-truncate">{props.text}</p>
+      {props.postImage && <img src={props.postImage} alt="" className="w-100" />}
+
       <div className="border-top pt-3 d-flex ">
         <p className="d-flex align-items-center mr-3 ml-2">
           <AiOutlineLike style={{ transform: "scale(1.8)" }} className="mr-3" />

@@ -2,8 +2,15 @@ import React from "react";
 import { Button, Image } from "react-bootstrap";
 import { TiUserAdd } from "react-icons/ti";
 import { BsFillBookmarkFill } from "react-icons/bs";
+import { Form } from "react-bootstrap";
+import { submitProfilePicture } from "../functions/functions";
 
 export default (props) => {
+  async function changeProfilePicture(e) {
+    console.log(e.target.files[0]);
+    await submitProfilePicture(props.userID, props.auth, e.target.files[0]);
+    await props.refreshData();
+  }
   return (
     <div className="bg-white border" style={{ borderRadius: "4px" }}>
       <div>
@@ -20,6 +27,10 @@ export default (props) => {
               width: "64px",
             }}
           ></Image>
+          <Form onChange={changeProfilePicture}>
+            <Form.File id="custom-file" label="" custom className="text-left" data-browse="Change profile pic" />
+          </Form>
+
           <h4>{props.profileData.name + " " + props.profileData.surname}</h4>
           <p>{props.profileData.title}</p>
         </a>

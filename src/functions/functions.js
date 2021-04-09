@@ -58,8 +58,39 @@ export async function submitPost(auth, postText) {
     body: JSON.stringify(payload),
     headers: { Authorization: auth, "Content-Type": "application/json" },
   });
-  console.log(response);
+  const data = await response.json();
   if (response.ok) {
-    return alert("Post successfuly submitted");
+    alert("Post successfully submitted");
+    return data._id;
+  }
+}
+
+export async function submitProfilePicture(userID, auth, file) {
+  const formData = new FormData();
+  formData.append("profile", file);
+  const url = `https://striveschool-api.herokuapp.com/api/profile/${userID}/picture`;
+  const response = await fetch(url, {
+    method: "POST",
+    body: formData,
+    headers: { Authorization: auth },
+  });
+
+  if (response.ok) {
+    return alert("Picture successfully changed");
+  }
+}
+
+export async function submitPostPicture(postID, auth, file) {
+  const formData = new FormData();
+  formData.append("post", file);
+  const url = `https://striveschool-api.herokuapp.com/api/posts/${postID}`;
+  const response = await fetch(url, {
+    method: "POST",
+    body: formData,
+    headers: { Authorization: auth },
+  });
+
+  if (response.ok) {
+    return;
   }
 }
