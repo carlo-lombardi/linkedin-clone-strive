@@ -2,7 +2,7 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 import { FaPlus, FaCheck } from "react-icons/fa";
-
+import { Link } from "react-router-dom"
 class RecomandedItem extends React.Component {
 	state = {
 		follow: "false",
@@ -17,7 +17,7 @@ class RecomandedItem extends React.Component {
 					</div>
 					<div className="col col-10 p-1 flex-column d-flex ">
 						<div className="name-wrapper d-flex" style={{ lineHeight: "2px" }}>
-							<p className="font-weight-bold text-left m-0">{`${this.props.name} ${this.props.surname}`}</p>
+							<Link to={`/profile/` + this.props.id}><p className="font-weight-bold text-left m-0">{`${this.props.name} ${this.props.surname}`}</p></Link>
 						</div>
 
 						<small className="text-muted text-left m-2 ">

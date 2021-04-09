@@ -5,7 +5,7 @@ import Job from "./Job";
 export default function VoluntierExperience() {
 	return (
 		<div>
-			<div className=" m-3 p-3 d-flex   align-items-center ">
+			<div className=" mx-3 px-3 d-flex   align-items-center ">
 				<h4>Voluntier experience</h4>
 
 				{/* <i class="fas fa-plus"></i> */}
@@ -13,7 +13,7 @@ export default function VoluntierExperience() {
 					<FaPlus />
 				</p>
 			</div>
-			<div className=" m-3 p-3 d-flex align-items-center">
+			<div className=" mx-3 px-3 d-flex align-items-center">
 				<Job
 					img="https://via.placeholder.com/100"
 					title="job title"

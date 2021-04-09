@@ -96,7 +96,7 @@ export default function Post(props) {
           </Button>
         </div>
       </div>
-      <p className="w-100 text-truncate">{props.text}</p>
+      <p className="w-100 text-break">{props.text}</p>
       {props.postImage && <img src={props.postImage} alt="" className="w-100" />}
 
       <div className="border-top pt-3 d-flex ">

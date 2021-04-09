@@ -37,7 +37,7 @@ export default function Recomandation() {
 			<div className="d-flex flex-column my-4">{mapProfiles(104)}</div>
 			<div>
 				<p>
-					View all recomandation <FaArrowRight />
+					View all recommendations  <FaArrowRight />
 				</p>
 			</div>
 		</div>

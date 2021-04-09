@@ -57,7 +57,7 @@ export default (props) => {
       <div className="d-flex flex-row border-top p-2 shade">
         <a href="#" className="text-dark no-decoration">
           <BsFillBookmarkFill />
-          <span className="small-text">My items</span>
+          <span className="small-text ml-1">My items</span>
         </a>
       </div>
     </div>

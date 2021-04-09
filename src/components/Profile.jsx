@@ -20,7 +20,7 @@ export default function Profile(props) {
   return (
     <div className="container">
       <div className="row">
-        <div className="left col d-flex flex-column col-12 col-lg-8 px-2">
+        <div className="left col d-flex flex-column col-12 col-lg-8 px-2 py-2">
           {/* components on left go here */}
           <Header
             name={profileData.name}
