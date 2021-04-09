@@ -6,7 +6,7 @@ export default function (props) {
   return (
     <div className="d-flex flex-column position-relative border bg-white h-100 round-border">
       <div className="h-50">
-        <Image className="h-100 w-100" src="https://picsum.photos/750/200" />
+        <Image className="h-100 w-100" src="https://picsum.photos/750/200" style={{ "border-radius": "10px 10px 0px 0px" }}/>
       </div>
       <div className="h-50">
         <div className="d-flex justify-content-end align-items-center m-3 mx-4">
@@ -18,7 +18,7 @@ export default function (props) {
           </Button>
           <BsThreeDots />
         </div>
-        <div className="d-flex p-3 justify-content-between">
+        <div className="d-flex p-4 justify-content-between">
           <div className="d-flex flex-column">
             <h5>
               {props.name} {props.surname}
@@ -29,7 +29,7 @@ export default function (props) {
               <span className="text-primary font-weight-bold">Contact info</span>
             </p>
           </div>
-          <div className="d-flex flex-column">
+          <div className="d-flex flex-column mx-5">
             <div className="d-flex align-items-center">
               <Image
                 fluid

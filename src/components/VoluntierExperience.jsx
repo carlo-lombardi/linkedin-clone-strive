@@ -6,7 +6,7 @@ export default function VoluntierExperience() {
 	return (
 		<div>
 			<div className=" mx-1 px-1 d-flex   align-items-center ">
-				<h4>Voluntier experience</h4>
+				<h4>Volunteer Experience</h4>
 
 				{/* <i class="fas fa-plus"></i> */}
 				<p className="ml-auto">
@@ -15,7 +15,7 @@ export default function VoluntierExperience() {
 			</div>
 			<div className=" mx-2 px-2 d-flex align-items-center">
 				<Job
-					img="https://via.placeholder.com/100"
+					img="https://dittytv.com/wp-content/uploads/2015/05/Facebook-Logo-PNG.png"
 					title="job title"
 					subtitle="job description"
 					text="job duration"

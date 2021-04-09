@@ -100,19 +100,19 @@ export default function Post(props) {
       {props.postImage && <img src={props.postImage} alt="" className="w-100" />}
 
       <div className="border-top pt-3 d-flex ">
-        <p className="d-flex align-items-center mr-3 ml-2">
+        <p className="d-flex align-items-center mr-3 ml-2 mb-0">
           <AiOutlineLike style={{ transform: "scale(1.8)" }} className="mr-3" />
           Like
         </p>
-        <p className="d-flex align-items-center mr-3 ml-2">
+        <p className="d-flex align-items-center mr-3 ml-2 mb-0">
           <FaRegComment style={{ transform: "scale(1.8)" }} className="mr-3" />
           Comment
         </p>
-        <p className="d-flex align-items-center mr-3 ml-2">
+        <p className="d-flex align-items-center mr-3 ml-2 mb-0">
           <BiShare style={{ transform: "scale(1.8)" }} className="mr-3" />
           Share
         </p>
-        <p className="d-flex align-items-center mr-3 ml-2">
+        <p className="d-flex align-items-center mr-3 ml-2 mb-0">
           <FiSend style={{ transform: "scale(1.8)" }} className="mr-3" />
           Send
         </p>

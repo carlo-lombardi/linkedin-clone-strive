@@ -15,7 +15,7 @@ export default function Experience() {
         </p>
       </div>
       <div className=" mx-2 px-2 d-flex align-items-center">
-        <Job img="https://via.placeholder.com/100" title="job title" subtitle="job description" text="job duration" />
+        <Job img="https://coursereport-s3-production.global.ssl.fastly.net/rich/rich_files/rich_files/6256/s300/strive-20school-20logo.png" title="job title" subtitle="job description" text="job duration" />
       </div>
     </div>
   );

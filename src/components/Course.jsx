@@ -7,7 +7,7 @@ class Course extends React.Component {
 			<div>
 				<Card className="d-flex flex-row m-3 border-0 align-items-center">
 					<Card.Img
-						className="w-25% img-fluid m-1"
+						className="w-25% img-fluid m-1 max-width-img"
 						variant="left"
 						src={this.props.img}
 						alt={this.props.img}
