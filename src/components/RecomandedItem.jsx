@@ -11,13 +11,13 @@ class RecomandedItem extends React.Component {
 	render() {
 		return (
 			<div>
-				<div className="row my-1 fs-6">
+				<div className="row my-1 px-3 fs-6">
 					<div className="col col-2 px-2">
 						<Image roundedCircle fluid src={this.props.image} alt="" />
 					</div>
 					<div className="col col-10 p-1 flex-column d-flex ">
 						<div className="name-wrapper d-flex" style={{ lineHeight: "2px" }}>
-							<Link to={`/profile/` + this.props.id}><p className="font-weight-bold text-left m-0">{`${this.props.name} ${this.props.surname}`}</p></Link>
+							<Link className="no-decoration" to={`/profile/` + this.props.id}><p className="font-weight-bold text-left m-0">{`${this.props.name} ${this.props.surname}`}</p></Link>
 						</div>
 
 						<small className="text-muted text-left m-2 ">

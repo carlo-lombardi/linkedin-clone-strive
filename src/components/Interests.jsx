@@ -4,7 +4,7 @@ import Interes from "./Interes";
 
 export default function Interests() {
   return (
-    <div className=" border bg-white px-3 pt-3 rounded mb-4">
+    <div className=" border bg-white px-3 pt-3 mb-4 round-border">
       <h4 className="m-3">Interests</h4>
       <Row>
         <Col xs={6}>

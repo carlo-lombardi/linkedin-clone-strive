@@ -24,7 +24,7 @@ export default (props) => {
   }
   async function uploadPostImage(event) {}
   return (
-    <div className="bg-white border px-3" style={{ borderRadius: "4px" }}>
+    <div className="bg-white border px-3 round-border">
       <div className="row my-2">
         <div className="col col-2 text-center">
           <Image src={props.profileData.image} style={{ borderRadius: "24px", height: "48px", width: "48px" }}></Image>

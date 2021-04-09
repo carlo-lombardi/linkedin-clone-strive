@@ -4,7 +4,7 @@ import CourseItem from "./CourseItem";
 
 export default function Courses() {
 	return (
-		<div className="p-3 my-2 border bg-white " style={{ borderRadius: "4px" }}>
+		<div className="p-3 my-2 border bg-white round-border">
 			<div className="d-flex justify-content-between">
 				<h5 className="mt-2 text-left">Today's most viewed courses</h5>
 				<p className="my-2">
@@ -14,7 +14,7 @@ export default function Courses() {
 			<ol className="d-flex flex-column my-4">
 				<li style={{ fontWeight: "bold" }}>
 					<CourseItem
-						title="The Six Morning Habits Of Hight Perfor..."
+						title="The Six Morning Habits Of High Perfor..."
 						author="Pete Mockaitis"
 						description="How to Be Awesome at Your J..."
 					/>
@@ -31,7 +31,7 @@ export default function Courses() {
 				</li>
 			</ol>
 			<div>
-				<p>
+				<p className="mb-0">
 					Show more on LinkedIn Learning <FaArrowRight />
 				</p>
 			</div>

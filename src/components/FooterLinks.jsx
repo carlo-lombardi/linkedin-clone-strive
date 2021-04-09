@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 export default function FooterLinks() {
 	return (
 		<div
-			className="px-5 my-2  border bg-white text-center"
-			style={{ borderRadius: "4px", textSize: "1" }}
+			className="px-5 my-2  border bg-white text-center round-border"
+			style={{ textSize: "1" }}
 		>
 			<small className="m-2">
 				<Link to="#" className="text-muted">
