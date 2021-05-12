@@ -6,28 +6,33 @@ import { RiArticleFill } from "react-icons/ri";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
 import { useState } from "react";
-import { submitPost, submitPostPicture } from "../functions/functions";
+import { submitPostPicture } from "../functions/functions";
 
 export default (props) => {
   const [postText, setPostText] = useState("");
   const [postImage, setPostImage] = useState("");
+
+  const username = "slavkojos";
+  const userId = "609b18ce3a78aa0f08b0b0ea";
+
   async function handleSubmit(event) {
     if (event.key === "Enter" && postText !== "") {
       event.target.value = "";
       console.log("trying to submit");
-      const postID = await submitPost(props.auth, postText);
-      if (postImage !== "") {
-        await submitPostPicture(postID, props.auth, postImage);
-      }
+      await submitPostPicture(postText, postImage, username, userId);
+      console.log(submitPostPicture);
       await props.refreshData();
     }
   }
-  async function uploadPostImage(event) {}
+
   return (
     <div className="bg-white border px-3 round-border">
       <div className="row my-2">
         <div className="col col-2 text-center">
-          <Image src={props.profileData.image} style={{ borderRadius: "24px", height: "48px", width: "48px" }}></Image>
+          <Image
+            src={props.profileData.image}
+            style={{ borderRadius: "24px", height: "48px", width: "48px" }}
+          ></Image>
         </div>
         <div className="col col-10">
           <InputGroup
