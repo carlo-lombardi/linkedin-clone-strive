@@ -1,5 +1,5 @@
 export async function getAllProfiles() {
-  const url = "https://striveschool-api.herokuapp.com/api/profile/";
+  const url = "http://localhost:3001/profile/";
   const response = await fetch(url);
   const data = await response.json();
   if (response.ok) {
@@ -8,7 +8,7 @@ export async function getAllProfiles() {
 }
 
 export async function getProfileById(id) {
-  const url = "https://striveschool-api.herokuapp.com/api/profile/";
+  const url = "http://localhost:3001/profile/";
   const response = await fetch(url + id);
   const data = await response.json();
   if (response.ok) {
