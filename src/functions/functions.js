@@ -1,47 +1,47 @@
-export async function getAllProfiles(auth) {
+export async function getAllProfiles() {
   const url = "https://striveschool-api.herokuapp.com/api/profile/";
-  const response = await fetch(url, { headers: { Authorization: auth } });
+  const response = await fetch(url);
   const data = await response.json();
   if (response.ok) {
     return data;
   }
 }
 
-export async function getProfileById(id, auth) {
+export async function getProfileById(id) {
   const url = "https://striveschool-api.herokuapp.com/api/profile/";
-  const response = await fetch(url + id, { headers: { Authorization: auth } });
+  const response = await fetch(url + id);
   const data = await response.json();
   if (response.ok) {
     return data;
   }
 }
 
-export async function getAllPosts(auth) {
+export async function getAllPosts() {
   const url = "https://striveschool-api.herokuapp.com/api/posts/";
-  const response = await fetch(url, { headers: { Authorization: auth } });
+  const response = await fetch(url);
   const data = await response.json();
   if (response.ok) {
     return data;
   }
 }
 
-export async function deletePost(id, auth) {
+export async function deletePost(id) {
   const url = "https://striveschool-api.herokuapp.com/api/posts/";
-  const response = await fetch(url + id, { method: "DELETE", headers: { Authorization: auth } });
+  const response = await fetch(url + id, { method: "DELETE" });
   console.log(response);
   if (response.ok) {
     return alert("Post deleted successfully");
   }
 }
 
-export async function editPost(id, auth, editText) {
+export async function editPost(id, editText) {
   const payload = { text: editText };
   console.log(payload);
   const url = "https://striveschool-api.herokuapp.com/api/posts/";
   const response = await fetch(url + id, {
     method: "PUT",
     body: JSON.stringify(payload),
-    headers: { Authorization: auth, "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json" },
   });
   console.log(response);
   if (response.ok) {
@@ -49,14 +49,14 @@ export async function editPost(id, auth, editText) {
   }
 }
 
-export async function submitPost(auth, postText) {
+export async function submitPost(postText) {
   const payload = { text: postText };
   console.log(payload);
   const url = "https://striveschool-api.herokuapp.com/api/posts/";
   const response = await fetch(url, {
     method: "POST",
     body: JSON.stringify(payload),
-    headers: { Authorization: auth, "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json" },
   });
   const data = await response.json();
   if (response.ok) {
@@ -65,14 +65,13 @@ export async function submitPost(auth, postText) {
   }
 }
 
-export async function submitProfilePicture(userID, auth, file) {
+export async function submitProfilePicture(userID, file) {
   const formData = new FormData();
   formData.append("profile", file);
   const url = `https://striveschool-api.herokuapp.com/api/profile/${userID}/picture`;
   const response = await fetch(url, {
     method: "POST",
     body: formData,
-    headers: { Authorization: auth },
   });
 
   if (response.ok) {
@@ -80,14 +79,13 @@ export async function submitProfilePicture(userID, auth, file) {
   }
 }
 
-export async function submitPostPicture(postID, auth, file) {
+export async function submitPostPicture(postID, file) {
   const formData = new FormData();
   formData.append("post", file);
   const url = `https://striveschool-api.herokuapp.com/api/posts/${postID}`;
   const response = await fetch(url, {
     method: "POST",
     body: formData,
-    headers: { Authorization: auth },
   });
 
   if (response.ok) {
