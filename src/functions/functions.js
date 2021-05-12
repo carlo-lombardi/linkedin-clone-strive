@@ -34,18 +34,9 @@ export async function getAllPosts() {
   }
 }
 
-<<<<<<< Updated upstream
-export async function deletePost(id, auth) {
-  const url = "https://striveschool-api.herokuapp.com/api/posts/";
-  const response = await fetch(url + id, {
-    method: "DELETE",
-    headers: { Authorization: auth },
-  });
-=======
 export async function deletePost(id) {
   const url = "http://localhost:3001/posts/";
   const response = await fetch(url + id, { method: "DELETE" });
->>>>>>> Stashed changes
   console.log(response);
   if (response.ok) {
     return alert("Post deleted successfully");
