@@ -90,3 +90,26 @@ export async function submitPostPicture(postText, file, username, userId) {
     return;
   }
 }
+
+export async function editProfile(id, name, surname, email, username, bio, title, area) {
+  const payload = {
+    name: name,
+    surname: surname,
+    email: email,
+    username: username,
+    bio: bio,
+    title: title,
+    area: area,
+  };
+  console.log(payload);
+  const url = "http://localhost:3001/profile/";
+  const response = await fetch(url + id, {
+    method: "PUT",
+    body: JSON.stringify(payload),
+    headers: { "Content-Type": "application/json" },
+  });
+  console.log(response);
+  if (response.ok) {
+    return alert("Profile edited successfully");
+  }
+}

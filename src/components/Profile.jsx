@@ -13,10 +13,14 @@ import Footer from "./Footer";
 const auth =
   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjMWE0NjZmZDIyODAwMTUzZmRiYjIiLCJpYXQiOjE2MTc2OTczNTEsImV4cCI6MTYxODkwNjk1MX0.z50JfhhjKZpYGwCvaA1tJAjx8DT5qtEdJK-7K47cYAw";
 export default function Profile(props) {
-  const [profileData, updateProfileData] = useState("");
-  useEffect(async () => {
+  const [profileData, updateProfileData] = useState([]);
+  async function fetchData() {
     updateProfileData(await getProfileById(props.match.params.profileID));
+  }
+  useEffect(async () => {
+    fetchData();
   }, [props.match.params.profileID]);
+  console.log("profileData in profile", profileData);
   return (
     <div className="container">
       <div className="row">
@@ -31,6 +35,8 @@ export default function Profile(props) {
             area={profileData.area}
             bio={profileData.bio}
             image={profileData.image}
+            username={profileData.username}
+            refreshData={fetchData}
           />
           <Highlights />
           <Activity />
