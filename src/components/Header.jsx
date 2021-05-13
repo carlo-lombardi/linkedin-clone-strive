@@ -1,6 +1,8 @@
 import React from "react";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { BsThreeDots } from "react-icons/bs";
+import { AiOutlineFilePdf } from "react-icons/ai";
+import { GrDocumentCsv } from "react-icons/gr";
 
 export default function (props) {
   return (
@@ -16,7 +18,12 @@ export default function (props) {
           <Button className="mx-2 font-weight-bold" variant="outline-dark" style={{ borderRadius: "20px" }}>
             Message
           </Button>
-          <BsThreeDots />
+          <a href={`http://localhost:3001/profile/${props.userID}/cv`}>
+            <AiOutlineFilePdf className="mx-1" size={35} style={{ cursor: "pointer" }} />
+          </a>
+          <a href={`http://localhost:3001/profile/experiences/CSV`}>
+            <GrDocumentCsv className="mx-1" size={30} style={{ cursor: "pointer" }} />
+          </a>
         </div>
         <div className="d-flex p-3 justify-content-between">
           <div className="d-flex flex-column">
@@ -51,12 +58,7 @@ export default function (props) {
           </div>
         </div>
       </div>
-      <Image
-        roundedCircle
-        className="position-absolute border"
-        src={props.image}
-        style={{ top: "30%", left: "2%", height: "150px" }}
-      />
+      <Image roundedCircle className="position-absolute border" src={props.image} style={{ top: "30%", left: "2%", height: "150px" }} />
     </div>
   );
 }

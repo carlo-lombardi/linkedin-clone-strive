@@ -4,12 +4,12 @@ import { TiUserAdd } from "react-icons/ti";
 import { BsFillBookmarkFill } from "react-icons/bs";
 import { Form } from "react-bootstrap";
 import { submitProfilePicture } from "../functions/functions";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 export default (props) => {
   async function changeProfilePicture(e) {
     console.log(e.target.files[0]);
-    await submitProfilePicture(props.userID, props.auth, e.target.files[0]);
+    await submitProfilePicture(e.target.files[0], props.userID);
     await props.refreshData();
   }
   return (
@@ -29,12 +29,12 @@ export default (props) => {
             }}
           ></Image>
         </Link>
-          <Form onChange={changeProfilePicture}>
-            <Form.File id="custom-file" label="" custom className="text-left" data-browse="Change profile pic" />
-          </Form>
+        <Form onChange={changeProfilePicture}>
+          <Form.File id="custom-file" label="" custom className="text-left" data-browse="Change profile pic" />
+        </Form>
 
-          <h4>{props.profileData.name + " " + props.profileData.surname}</h4>
-          <p>{props.profileData.title}</p>
+        <h4>{props.profileData.name + " " + props.profileData.surname}</h4>
+        <p>{props.profileData.title}</p>
       </div>
       <div className="border-top p-2 shade">
         <a href="#" className="text-left d-flex w-100 justify-content-between text-dark no-decoration">
