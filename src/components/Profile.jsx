@@ -15,7 +15,7 @@ const auth =
 export default function Profile(props) {
   const [profileData, updateProfileData] = useState("");
   useEffect(async () => {
-    updateProfileData(await getProfileById(props.match.params.profileID, auth));
+    updateProfileData(await getProfileById(props.match.params.profileID));
   }, [props.match.params.profileID]);
   return (
     <div className="container">

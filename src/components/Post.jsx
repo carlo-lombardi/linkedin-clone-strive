@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 import EditPostModal from "./EditPostModal";
 import { useState } from "react";
 
-const currentUserID = "606c1a466fd22800153fdbb2";
+const currentUserID = "609b18ce3a78aa0f08b0b0ea";
 
 const epochs = [
   ["year", 31536000],
@@ -54,17 +54,33 @@ export default function Post(props) {
   return (
     <div className="p-3 my-2 bg-white border round-border">
       <div className="d-flex justify-content-between align-items-center my-2 mb-3">
-        <Link className="d-flex text-decoration-none" style={{ color: "black" }} to={`/profile/` + props.userID}>
-          <Image roundedCircle className="mr-3" src={props.image} style={{ height: "50px", width: "50px" }} />
+        <Link
+          className="d-flex text-decoration-none"
+          style={{ color: "black" }}
+          to={`/profile/` + props.userID}
+        >
+          <Image
+            roundedCircle
+            className="mr-3"
+            src={props.image}
+            style={{ height: "50px", width: "50px" }}
+          />
           <div className="d-flex flex-column">
             <h6>{props.name + " " + props.surname}</h6>
             <small className="font-italic">@{props.username}</small>
-            {props.updatedTime !== undefined && props.updatedTime !== null && <small>{timeAgo(postDate)}</small>}
+            {props.updatedTime !== undefined && props.updatedTime !== null && (
+              <small>{timeAgo(postDate)}</small>
+            )}
           </div>
         </Link>
         <div>
           {currentUserID === props.userID && (
-            <Button variant="link" className="p-0 m-0" style={{ color: "black" }} onClick={handleShow}>
+            <Button
+              variant="link"
+              className="p-0 m-0"
+              style={{ color: "black" }}
+              onClick={handleShow}
+            >
               <BiEdit style={{ transform: "scale(1.5)" }} className="mx-2" />
             </Button>
           )}
@@ -75,7 +91,6 @@ export default function Post(props) {
             postID={props.id}
             postText={props.text}
             refreshData={props.refreshData}
-            auth={props.auth}
           />
 
           {currentUserID === props.userID && (
@@ -97,7 +112,9 @@ export default function Post(props) {
         </div>
       </div>
       <p className="w-100 text-break">{props.text}</p>
-      {props.postImage && <img src={props.postImage} alt="" className="w-100" />}
+      {props.postImage && (
+        <img src={props.postImage} alt="" className="w-100" />
+      )}
 
       <div className="border-top pt-3 d-flex ">
         <p className="d-flex align-items-center mr-3 ml-2">

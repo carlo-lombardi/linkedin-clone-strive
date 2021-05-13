@@ -1,5 +1,5 @@
 export async function getAllProfiles() {
-  const url = "https://striveschool-api.herokuapp.com/api/profile/";
+  const url = "http://localhost:3001/profile/";
   const response = await fetch(url);
   const data = await response.json();
   if (response.ok) {
@@ -8,7 +8,7 @@ export async function getAllProfiles() {
 }
 
 export async function getProfileById(id) {
-  const url = "https://striveschool-api.herokuapp.com/api/profile/";
+  const url = "http://localhost:3001/profile/";
   const response = await fetch(url + id);
   const data = await response.json();
   if (response.ok) {
@@ -17,7 +17,7 @@ export async function getProfileById(id) {
 }
 
 export async function getAllPosts() {
-  const url = "https://striveschool-api.herokuapp.com/api/posts/";
+  const url = "http://localhost:3001/posts/";
   const response = await fetch(url);
   const data = await response.json();
   if (response.ok) {
@@ -25,12 +25,9 @@ export async function getAllPosts() {
   }
 }
 
-export async function deletePost(id, auth) {
-  const url = "https://striveschool-api.herokuapp.com/api/posts/";
-  const response = await fetch(url + id, {
-    method: "DELETE",
-    headers: { Authorization: auth },
-  });
+export async function deletePost(id) {
+  const url = "http://localhost:3001/posts/";
+  const response = await fetch(url + id, { method: "DELETE" });
   console.log(response);
   if (response.ok) {
     return alert("Post deleted successfully");
@@ -40,7 +37,7 @@ export async function deletePost(id, auth) {
 export async function editPost(id, editText) {
   const payload = { text: editText };
   console.log(payload);
-  const url = "https://striveschool-api.herokuapp.com/api/posts/";
+  const url = "http://localhost:3001/posts/";
   const response = await fetch(url + id, {
     method: "PUT",
     body: JSON.stringify(payload),
@@ -52,26 +49,11 @@ export async function editPost(id, editText) {
   }
 }
 
-export async function submitPost(postText) {
-  const payload = { text: postText };
-  console.log(payload);
-  const url = "https://striveschool-api.herokuapp.com/api/posts/";
-  const response = await fetch(url, {
-    method: "POST",
-    body: JSON.stringify(payload),
-    headers: { "Content-Type": "application/json" },
-  });
-  const data = await response.json();
-  if (response.ok) {
-    alert("Post successfully submitted");
-    return data._id;
-  }
-}
-
-export async function submitProfilePicture(userID, file) {
+export async function submitProfilePicture(file, userID) {
   const formData = new FormData();
-  formData.append("profile", file);
-  const url = `https://striveschool-api.herokuapp.com/api/profile/${userID}/picture`;
+  formData.append("profilePic", file);
+
+  const url = `https://striveschool-api.herokuapp.com/api/profile/${userID}`;
   const response = await fetch(url, {
     method: "POST",
     body: formData,
@@ -82,10 +64,14 @@ export async function submitProfilePicture(userID, file) {
   }
 }
 
-export async function submitPostPicture(postID, file) {
+export async function submitPostPicture(postText, file, username, userId) {
   const formData = new FormData();
-  formData.append("post", file);
-  const url = `https://striveschool-api.herokuapp.com/api/posts/${postID}`;
+  formData.append("text", postText);
+  formData.append("username", username);
+  formData.append("PostImg", file);
+  formData.append("user", userId);
+
+  const url = `http://localhost:3001/posts/`;
   const response = await fetch(url, {
     method: "POST",
     body: formData,
