@@ -23,6 +23,7 @@ export default function Profile(props) {
         <div className="left col d-flex flex-column col-12 col-lg-8 px-2 py-2">
           {/* components on left go here */}
           <Header
+            userID={profileData._id}
             name={profileData.name}
             surname={profileData.surname}
             email={profileData.email}

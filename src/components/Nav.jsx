@@ -7,103 +7,99 @@ import { CgMenuGridR } from "react-icons/cg";
 import { Container, Form, FormControl, InputGroup, ListGroup, Navbar, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-class NavBar extends React.Component {
-  render() {
-    return (
-      <Navbar className="p-0" bg="light" expand="lg">
-        <Row className="mx-auto flex-row">
-          <Container className="flex-row justify-content-start">
-            <Navbar.Brand href="#home" className="mr-1">
-              <FaLinkedin id="brand_logo" />
-            </Navbar.Brand>
-            <Form className="my-2 mr-5">
-              <InputGroup>
-                <InputGroup.Prepend>
-                  <InputGroup.Text id="basic-addon1">
-                    <ImSearch />
-                  </InputGroup.Text>
-                </InputGroup.Prepend>
-                <FormControl placeholder="Search" aria-label="Search" aria-describedby="basic-addon1" />
-              </InputGroup>
-            </Form>
-          </Container>
-          <Container className="ml-5 my-2">
-            <ListGroup className="flex-row">
-              <ListGroup.Item className="p-0 mx-2 navItems">
-                <a href="#">
-                  <Container className="mx-3 p-0 flex-column">
-                    <Link to="/">
-                      <AiFillHome className="navIcons" />
-                    </Link>
+export default function NavBar(props) {
+  return (
+    <Navbar className="p-0" bg="light" expand="lg">
+      <Row className="mx-auto flex-row">
+        <Container className="flex-row justify-content-start">
+          <Navbar.Brand href="#home" className="mr-1">
+            <FaLinkedin id="brand_logo" />
+          </Navbar.Brand>
+          <Form className="my-2 mr-5">
+            <InputGroup>
+              <InputGroup.Prepend>
+                <InputGroup.Text id="basic-addon1">
+                  <ImSearch />
+                </InputGroup.Text>
+              </InputGroup.Prepend>
+              <FormControl placeholder="Search" aria-label="Search" aria-describedby="basic-addon1" />
+            </InputGroup>
+          </Form>
+        </Container>
+        <Container className="ml-5 my-2">
+          <ListGroup className="flex-row">
+            <ListGroup.Item className="p-0 mx-2 navItems">
+              <a href="#">
+                <Container className="mx-3 p-0 flex-column">
+                  <Link to="/">
+                    <AiFillHome className="navIcons" />
+                  </Link>
 
-                    <Link to="/" className="navText">
-                      Home
-                    </Link>
-                  </Container>
-                </a>
-              </ListGroup.Item>
-              <ListGroup.Item className="p-0 mx-2 navItems">
-                <a href="#">
-                  <Container className="mx-3 p-0 flex-column">
-                    <FaUserFriends className="navIcons" />
-                    <span className="navText">My Network</span>
-                  </Container>
-                </a>
-              </ListGroup.Item>
-              <ListGroup.Item className="p-0 mx-2 navItems">
-                <a href="#">
-                  <Container className="mx-3 p-0 flex-column">
-                    <BsFillBriefcaseFill className="navIcons" />
-                    <span className="navText">Jobs</span>
-                  </Container>
-                </a>
-              </ListGroup.Item>
-              <ListGroup.Item className="p-0 mx-2 navItems">
-                <a href="#">
-                  <Container className="mx-3 p-0 flex-column">
-                    <BsFillChatDotsFill className="navIcons" />
-                    <span className="navText">Messaging</span>
-                  </Container>
-                </a>
-              </ListGroup.Item>
-              <ListGroup.Item className="p-0 mx-2 navItems">
-                <a href="#">
-                  <Container className="mx-3 p-0 flex-column">
-                    <FaBell className="navIcons" />
-                    <span className="navText">Notifications</span>
-                  </Container>
-                </a>
-              </ListGroup.Item>
-              <ListGroup.Item className="p-0 mx-2 navItems">
-                <a href="#">
-                  <Container className="mx-3 p-0 flex-column">
-                    <FaUserCircle className="navIcons" />
-                    <span className="navText">Me</span>
-                  </Container>
-                </a>
-              </ListGroup.Item>
-              <ListGroup.Item className="p-0 mx-2 navItems">
-                <a href="#">
-                  <Container className="mx-3 p-0 flex-column">
-                    <CgMenuGridR className="navIcons" />
-                    <span className="navText">Work</span>
-                  </Container>
-                </a>
-              </ListGroup.Item>
-              <ListGroup.Item className="p-0 mx-2 navItems">
-                <a href="#">
-                  <Container className="mx-3 p-0 flex-column">
-                    <FaSign className="navIcons" />
-                    <span className="navText">Hire</span>
-                  </Container>
-                </a>
-              </ListGroup.Item>
-            </ListGroup>
-          </Container>
-        </Row>
-      </Navbar>
-    );
-  }
+                  <Link to="/" className="navText">
+                    Home
+                  </Link>
+                </Container>
+              </a>
+            </ListGroup.Item>
+            <ListGroup.Item className="p-0 mx-2 navItems">
+              <a href="#">
+                <Container className="mx-3 p-0 flex-column">
+                  <FaUserFriends className="navIcons" />
+                  <span className="navText">My Network</span>
+                </Container>
+              </a>
+            </ListGroup.Item>
+            <ListGroup.Item className="p-0 mx-2 navItems">
+              <a href="#">
+                <Container className="mx-3 p-0 flex-column">
+                  <BsFillBriefcaseFill className="navIcons" />
+                  <span className="navText">Jobs</span>
+                </Container>
+              </a>
+            </ListGroup.Item>
+            <ListGroup.Item className="p-0 mx-2 navItems">
+              <a href="#">
+                <Container className="mx-3 p-0 flex-column">
+                  <BsFillChatDotsFill className="navIcons" />
+                  <span className="navText">Messaging</span>
+                </Container>
+              </a>
+            </ListGroup.Item>
+            <ListGroup.Item className="p-0 mx-2 navItems">
+              <a href="#">
+                <Container className="mx-3 p-0 flex-column">
+                  <FaBell className="navIcons" />
+                  <span className="navText">Notifications</span>
+                </Container>
+              </a>
+            </ListGroup.Item>
+            <ListGroup.Item className="p-0 mx-2 navItems">
+              <Link to={`/profile/` + props.userID}>
+                <Container className="mx-3 p-0 flex-column">
+                  <FaUserCircle className="navIcons" />
+                  <span className="navText">Me</span>
+                </Container>
+              </Link>
+            </ListGroup.Item>
+            <ListGroup.Item className="p-0 mx-2 navItems">
+              <a href="#">
+                <Container className="mx-3 p-0 flex-column">
+                  <CgMenuGridR className="navIcons" />
+                  <span className="navText">Work</span>
+                </Container>
+              </a>
+            </ListGroup.Item>
+            <ListGroup.Item className="p-0 mx-2 navItems">
+              <a href="#">
+                <Container className="mx-3 p-0 flex-column">
+                  <FaSign className="navIcons" />
+                  <span className="navText">Hire</span>
+                </Container>
+              </a>
+            </ListGroup.Item>
+          </ListGroup>
+        </Container>
+      </Row>
+    </Navbar>
+  );
 }
-
-export default NavBar;

@@ -62,7 +62,7 @@ export async function submitProfilePicture(file, userID) {
   const formData = new FormData();
   formData.append("profilePic", file);
 
-  const url = `https://striveschool-api.herokuapp.com/api/profile/${userID}`;
+  const url = `http://localhost:3001/profile/${userID}/picture`;
   const response = await fetch(url, {
     method: "POST",
     body: formData,
