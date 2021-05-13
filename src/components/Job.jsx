@@ -43,7 +43,12 @@ class Job extends React.Component {
         {this.state.experiences.map((experience) => (
           <>
             <Card className="d-flex flex-row m-3 border-0 align-items-center">
-              <Card.Img className="w-25% img-fluid m-1" variant="left" src={this.props.img} alt={this.props.img} />
+              <Card.Img
+                className="w-25% img-fluid m-1"
+                variant="left"
+                src={this.props.img}
+                alt={this.props.img}
+              />
               <Card.Body className="w-75% m-1 align-item-start justify-content-start">
                 <Card.Title>{experience.company}</Card.Title>
                 <Card.Text>

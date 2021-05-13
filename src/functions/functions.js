@@ -15,15 +15,6 @@ export async function getProfileById(id) {
     return data;
   }
 }
-// /* --------------------------- experience API -------------------------------------- */
-// export async function getExperience(id, auth) {
-//   const url = "https://striveschool-api.herokuapp.com/api/profile/";
-//   const response = await fetch(url + id, { headers: { Authorization: auth } });
-//   const data = await response.json();
-//   if (response.ok) {
-//     return data;
-//   }
-// }
 
 export async function getAllPosts() {
   const url = "https://striveschool-api.herokuapp.com/api/posts/";
