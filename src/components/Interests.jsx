@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import { Col, Row, Button } from "react-bootstrap";
-import { useHistory, useParams } from "react-router";
+import React from "react";
+import { Col, Row } from "react-bootstrap";
 import Interes from "./Interes";
 
-export default function Interests(props) {
+export default function Interests() {
   return (
     <div className=" border bg-white px-3 pt-3 mb-4 round-border">
       <h4 className="m-3">Interests</h4>
@@ -49,21 +48,6 @@ export default function Interests(props) {
             title="Training Focus"
             members="181.693 members"
           />
-        </Col>
-      </Row>
-      <Row>Download</Row>
-      <Row>
-        <Col xs={6}>
-          <Button variant="secondary">PDF</Button>
-        </Col>
-        <Col xs={6}>
-          <Button
-            variant="secondary"
-            value="Export to CSV (Async)"
-            onClick={fetchingData}
-          >
-            CSV
-          </Button>
         </Col>
       </Row>
     </div>

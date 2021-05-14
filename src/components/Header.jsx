@@ -12,17 +12,35 @@ export default function (props) {
       </div>
       <div className="h-50">
         <div className="d-flex justify-content-end align-items-center m-3 mx-4">
-          <Button className="mx-2 font-weight-bold" variant="primary" style={{ borderRadius: "20px" }}>
+          <Button
+            className="mx-2 font-weight-bold"
+            variant="primary"
+            style={{ borderRadius: "20px" }}
+          >
             Connect
           </Button>
-          <Button className="mx-2 font-weight-bold" variant="outline-dark" style={{ borderRadius: "20px" }}>
+          <Button
+            className="mx-2 font-weight-bold"
+            variant="outline-dark"
+            style={{ borderRadius: "20px" }}
+          >
             Message
           </Button>
           <a href={`http://localhost:3001/profile/${props.userID}/cv`}>
-            <AiOutlineFilePdf className="mx-1" size={35} style={{ cursor: "pointer" }} />
+            <AiOutlineFilePdf
+              className="mx-1"
+              size={35}
+              style={{ cursor: "pointer" }}
+            />
           </a>
-          <a href={`http://localhost:3001/profile/experiences/CSV`}>
-            <GrDocumentCsv className="mx-1" size={30} style={{ cursor: "pointer" }} />
+          <a
+            href={`http://localhost:3001/profile/${props.userID}/experiences/CSV`}
+          >
+            <GrDocumentCsv
+              className="mx-1"
+              size={30}
+              style={{ cursor: "pointer" }}
+            />
           </a>
         </div>
         <div className="d-flex p-3 justify-content-between">
@@ -33,7 +51,9 @@ export default function (props) {
             <h6>{props.title}</h6>
             <p>
               {props.area} <span>500+ connections · </span>
-              <span className="text-primary font-weight-bold">Contact info</span>
+              <span className="text-primary font-weight-bold">
+                Contact info
+              </span>
             </p>
           </div>
           <div className="d-flex flex-column">
@@ -58,7 +78,12 @@ export default function (props) {
           </div>
         </div>
       </div>
-      <Image roundedCircle className="position-absolute border" src={props.image} style={{ top: "30%", left: "2%", height: "150px" }} />
+      <Image
+        roundedCircle
+        className="position-absolute border"
+        src={props.image}
+        style={{ top: "30%", left: "2%", height: "150px" }}
+      />
     </div>
   );
 }

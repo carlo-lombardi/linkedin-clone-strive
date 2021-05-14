@@ -12,26 +12,22 @@ class Job extends React.Component {
       endDate: "", //could be null
       description: "",
       area: "",
+      image: "",
     },
   };
   componentDidMount = async () => {
     try {
       let resp = await fetch(
-        "https://striveschool-api.herokuapp.com/api/profile/606c1c826fd22800153fdbb7/experiences",
-        {
-          headers: {
-            Authorization:
-              " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjMWM4MjZmZDIyODAwMTUzZmRiYjciLCJpYXQiOjE2MTc3ODkxMzcsImV4cCI6MTYxODk5ODczN30.gz4UQIrTBO0py4rcV33aaDqWYrf42Amz_3ePOPzGlbw",
-          },
-        }
+        `http://localhost:3001/profile/${this.props.userID}/experiences`
       );
       let exp = await resp.json();
-      console.log(exp);
-      this.setState({
-        experiences: exp,
-      });
+      setTimeout(() => {
+        this.setState({
+          experiences: exp,
+        });
+      }, 2000);
 
-      console.log(this.state.experience);
+      console.log(this.state.experiences);
     } catch (error) {
       console.log(error);
     }
@@ -46,12 +42,13 @@ class Job extends React.Component {
               <Card.Img
                 className="w-25% img-fluid m-1"
                 variant="left"
-                src={this.props.img}
-                alt={this.props.img}
+                src={experience.image}
+                alt={experience.image}
               />
               <Card.Body className="w-75% m-1 align-item-start justify-content-start">
                 <Card.Title>{experience.company}</Card.Title>
                 <Card.Text>
+                  <div>{experience.area}</div>
                   <div>{experience.role}</div>
                   <div>{experience.description}</div>
                   <div className="text-muted">{this.props.folowers}</div>

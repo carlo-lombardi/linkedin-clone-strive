@@ -34,7 +34,7 @@ export default function Profile(props) {
           />
           <Highlights />
           <Activity />
-          <ExperienceAndEdu />
+          <ExperienceAndEdu userID={profileData._id} />
           <Skills />
           <Acomplishments />
           <Interests />
