@@ -51,13 +51,14 @@ export default function Post(props) {
     await props.refreshData();
   };
   const postDate = new Date(props.updatedTime);
+
   return (
     <div className="p-3 my-2 bg-white border round-border">
       <div className="d-flex justify-content-between align-items-center my-2 mb-3">
         <Link
           className="d-flex text-decoration-none"
           style={{ color: "black" }}
-          to={`/profile/` + props.userID}
+          to={`/profile/` + props.userId}
         >
           <Image
             roundedCircle
@@ -74,7 +75,7 @@ export default function Post(props) {
           </div>
         </Link>
         <div>
-          {currentUserID === props.userID && (
+          {props.currentUserId === props.userId && (
             <Button
               variant="link"
               className="p-0 m-0"
@@ -93,7 +94,7 @@ export default function Post(props) {
             refreshData={props.refreshData}
           />
 
-          {currentUserID === props.userID && (
+          {props.currentUserId === props.userId && (
             <Button
               variant="link"
               className="p-0 m-0"

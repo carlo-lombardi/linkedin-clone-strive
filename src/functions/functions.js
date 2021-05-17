@@ -1,6 +1,10 @@
 export async function getAllProfiles() {
-  const url = "http://localhost:3001/profile/";
-  const response = await fetch(url);
+  const url = `${process.env.REACT_APP_API_URL}/profile/`;
+  const response = await fetch(url, {
+    headers: {
+      Authorization: "Bearer " + localStorage.getItem("token"),
+    },
+  });
   const data = await response.json();
   if (response.ok) {
     return data;
@@ -8,17 +12,26 @@ export async function getAllProfiles() {
 }
 
 export async function getProfileById(id) {
-  const url = "http://localhost:3001/profile/";
-  const response = await fetch(url + id);
+  const url = `${process.env.REACT_APP_API_URL}/profile/`;
+  const response = await fetch(url + id, {
+    headers: {
+      Authorization: "Bearer " + localStorage.getItem("token"),
+    },
+  });
   const data = await response.json();
+
   if (response.ok) {
     return data;
   }
 }
 
 export async function getAllPosts() {
-  const url = "http://localhost:3001/posts/";
-  const response = await fetch(url);
+  const url = `${process.env.REACT_APP_API_URL}/posts/`;
+  const response = await fetch(url, {
+    headers: {
+      Authorization: "Bearer " + localStorage.getItem("token"),
+    },
+  });
   const data = await response.json();
   if (response.ok) {
     return data;
@@ -26,8 +39,13 @@ export async function getAllPosts() {
 }
 
 export async function deletePost(id) {
-  const url = "http://localhost:3001/posts/";
-  const response = await fetch(url + id, { method: "DELETE" });
+  const url = `${process.env.REACT_APP_API_URL}/posts/`;
+  const response = await fetch(url + id, {
+    method: "DELETE",
+    headers: {
+      Authorization: "Bearer " + localStorage.getItem("token"),
+    },
+  });
   console.log(response);
   if (response.ok) {
     return alert("Post deleted successfully");
@@ -37,11 +55,14 @@ export async function deletePost(id) {
 export async function editPost(id, editText) {
   const payload = { text: editText };
   console.log(payload);
-  const url = "http://localhost:3001/posts/";
+  const url = `${process.env.REACT_APP_API_URL}/posts/`;
   const response = await fetch(url + id, {
     method: "PUT",
     body: JSON.stringify(payload),
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      Authorization: "Bearer " + localStorage.getItem("token"),
+      "Content-Type": "application/json",
+    },
   });
   console.log(response);
   if (response.ok) {
@@ -53,10 +74,13 @@ export async function submitProfilePicture(file, userID) {
   const formData = new FormData();
   formData.append("profilePic", file);
 
-  const url = `http://localhost:3001/profile/${userID}/picture`;
+  const url = `${process.env.REACT_APP_API_URL}/profile/${userID}/picture`;
   const response = await fetch(url, {
     method: "POST",
     body: formData,
+    headers: {
+      Authorization: "Bearer " + localStorage.getItem("token"),
+    },
   });
 
   if (response.ok) {
@@ -71,10 +95,13 @@ export async function submitPostPicture(postText, file, username, userId) {
   formData.append("PostImg", file);
   formData.append("user", userId);
 
-  const url = `http://localhost:3001/posts/`;
+  const url = `${process.env.REACT_APP_API_URL}/posts/`;
   const response = await fetch(url, {
     method: "POST",
     body: formData,
+    headers: {
+      Authorization: "Bearer " + localStorage.getItem("token"),
+    },
   });
 
   if (response.ok) {
@@ -82,7 +109,31 @@ export async function submitPostPicture(postText, file, username, userId) {
   }
 }
 
-export async function editProfile(id, name, surname, email, username, bio, title, area) {
+export async function getUserExperiences(userId) {
+  const url = `${process.env.REACT_APP_API_URL}/profile/${userId}/experiences`;
+  const response = await fetch(url, {
+    headers: {
+      Authorization: "Bearer " + localStorage.getItem("token"),
+    },
+  });
+  const data = await response.json();
+
+  if (response.ok) {
+    console.log(data[0]);
+    return data;
+  }
+}
+
+export async function editProfile(
+  id,
+  name,
+  surname,
+  email,
+  username,
+  bio,
+  title,
+  area
+) {
   const payload = {
     name: name,
     surname: surname,
@@ -93,7 +144,7 @@ export async function editProfile(id, name, surname, email, username, bio, title
     area: area,
   };
   console.log(payload);
-  const url = "http://localhost:3001/profile/";
+  const url = `${process.env.REACT_APP_API_URL}/profile/`;
   const response = await fetch(url + id, {
     method: "PUT",
     body: JSON.stringify(payload),

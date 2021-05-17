@@ -9,13 +9,17 @@ import { Link } from "react-router-dom";
 export default (props) => {
   async function changeProfilePicture(e) {
     console.log(e.target.files[0]);
-    await submitProfilePicture(e.target.files[0], props.userID);
+    await submitProfilePicture(e.target.files[0], props.userId);
     await props.refreshData();
   }
   return (
     <div className="bg-white border round-border">
       <div className="text-center">
-        <Image className="h-100 w-100" src="https://picsum.photos/750/200" style={{ "border-radius": "10px 10px 0px 0px" }} />
+        <Image
+          className="h-100 w-100"
+          src="https://picsum.photos/750/200"
+          style={{ "border-radius": "10px 10px 0px 0px" }}
+        />
         <Link to={`/profile/` + props.profileData._id}>
           <Image
             src={props.profileData.image}
@@ -30,17 +34,28 @@ export default (props) => {
           ></Image>
         </Link>
         <Form onChange={changeProfilePicture}>
-          <Form.File id="custom-file" label="" custom className="text-left" data-browse="Change profile pic" />
+          <Form.File
+            id="custom-file"
+            label=""
+            custom
+            className="text-left"
+            data-browse="Change profile pic"
+          />
         </Form>
 
         <h4>{props.profileData.name + " " + props.profileData.surname}</h4>
         <p>{props.profileData.title}</p>
       </div>
       <div className="border-top p-2 shade">
-        <a href="#" className="text-left d-flex w-100 justify-content-between text-dark no-decoration">
+        <a
+          href="#"
+          className="text-left d-flex w-100 justify-content-between text-dark no-decoration"
+        >
           <div className="d-flex flex-column">
             <span className="font-weight-light small-text">Connections</span>
-            <span className="font-weight-bold small-text">Grow your network</span>
+            <span className="font-weight-bold small-text">
+              Grow your network
+            </span>
           </div>
           <div>
             <TiUserAdd />
@@ -50,8 +65,12 @@ export default (props) => {
       <div className="border-top p-2 shade">
         <a href="#" className="text-dark no-decoration">
           <div className="d-flex flex-column">
-            <span className="font-weight-light small-text">Access exclusive tools & insights</span>
-            <span className="font-weight-bold small-text">Try Premium Free for 1 Month</span>
+            <span className="font-weight-light small-text">
+              Access exclusive tools & insights
+            </span>
+            <span className="font-weight-bold small-text">
+              Try Premium Free for 1 Month
+            </span>
           </div>
         </a>
       </div>

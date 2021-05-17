@@ -9,7 +9,7 @@ export default function Example(props) {
   const [postText, setPostText] = useState(props.postText);
   async function submitEditedPost() {
     console.log(postText);
-    await editPost(props.postID, props.auth, postText);
+    await editPost(props.postID, postText);
     props.handleClose();
     await props.refreshData();
   }

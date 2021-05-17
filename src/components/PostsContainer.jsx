@@ -1,7 +1,6 @@
 import Post from "./Post";
 
 export default function PostsContainer(props) {
-  console.log("postsData", props.postsData);
   function getPosts(from, to) {
     return props.postsData
 
@@ -19,8 +18,9 @@ export default function PostsContainer(props) {
             updatedTime={post.createdAt}
             image={post.user.image}
             refreshData={props.refreshData}
-            userID={post.user._id}
+            userId={post.user._id}
             postImage={post.image}
+            currentUserId={props.currentUserId}
           />
         );
       });

@@ -19,7 +19,12 @@ export default (props) => {
     if (event.key === "Enter" && postText !== "") {
       event.target.value = "";
       console.log("trying to submit");
-      await submitPostPicture(postText, postImage, username, userId);
+      await submitPostPicture(
+        postText,
+        postImage,
+        props.profileData.username,
+        props.userId
+      );
       console.log(submitPostPicture);
       await props.refreshData();
     }

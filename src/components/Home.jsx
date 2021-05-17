@@ -8,19 +8,19 @@ import { getAllPosts, getProfileById } from "../functions/functions";
 import UserInfo from "./UserInfo";
 import Discover from "./Discover";
 import CreatePost from "./CreatePost";
-const userID = "609b18ce3a78aa0f08b0b0ea";
 
-export default function Home() {
+export default function Home({ userId }) {
   const [data, updateData] = useState([]);
   const [profileData, updateProfileData] = useState("");
   async function fetchData() {
     updateData(await getAllPosts());
-    updateProfileData(await getProfileById(userID));
+    updateProfileData(await getProfileById(userId));
   }
+
   useEffect(async () => {
-    fetchData();
+    await fetchData();
   }, []);
-  console.log("profiledata on home", profileData);
+
   return (
     <div className="container">
       <div className="row vh-100 pt-2">
@@ -29,7 +29,7 @@ export default function Home() {
           <UserInfo
             profileData={profileData}
             refreshData={fetchData}
-            userID={userID}
+            userId={userId}
           />
           <Discover />
         </div>
@@ -38,9 +38,13 @@ export default function Home() {
           <CreatePost
             profileData={profileData}
             refreshData={fetchData}
-            userID={userID}
+            userId={userId}
           />
-          <PostsContainer postsData={data} refreshData={fetchData} />
+          <PostsContainer
+            postsData={data}
+            refreshData={fetchData}
+            currentUserId={userId}
+          />
         </div>
         <div className="right col col-12 col-md-4">
           {/* right columns go here */}
