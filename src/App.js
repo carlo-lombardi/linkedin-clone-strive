@@ -1,19 +1,15 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {
-  Route,
-  withRouter,
-  Redirect,
-  BrowserRouter as Router,
-} from "react-router-dom";
+import { Route, Redirect, BrowserRouter as Router } from "react-router-dom";
 import Nav from "./components/Nav";
 import Profile from "./components/Profile";
-import Header from "./components/Header";
-import Highlights from "./components/Highlights";
-import Activity from "./components/Activity";
+// import Header from "./components/Header";
+// import Highlights from "./components/Highlights";
+// import Activity from "./components/Activity";
 import Home from "./components/Home";
 import Registration from "./components/Registrationpage";
 import Login from "./components/LoginPage";
+import { getMyProfile } from "./functions/functions";
 
 import React from "react";
 
@@ -37,7 +33,7 @@ class App extends React.Component {
         let myProfile = await response.json();
         this.setState({ data: myProfile });
         this.setState({ userId: myProfile._id });
-        console.log(this.state);
+        return myProfile;
       }
     } catch (error) {
       console.log(error);
@@ -45,12 +41,18 @@ class App extends React.Component {
   };
 
   updateMainProfile = async () => {
-    await this.getMyProfile();
+    await getMyProfile();
   };
 
-  // componentDidMount = async () => {
-  //   await this.getMyProfile();
-  // };
+  componentDidMount = async () => {
+    if (localStorage.getItem("token") === null || undefined) {
+      <Redirect to="/" />;
+    } else {
+      const response = await getMyProfile();
+      this.setState({ data: response });
+      this.setState({ userId: response._id });
+    }
+  };
   // componentDidUpdate(prevProps) {
   //   if (prevProps !== this.props) {
   //     this.getMyProfile();
@@ -61,16 +63,16 @@ class App extends React.Component {
     return (
       <div>
         <Router>
-          <Route exact path="/login" render={(props) => <Login {...props} />} />
+          <Route exact path="/" render={(props) => <Login {...props} />} />
           <Route
             exact
             path="/register"
             render={(props) => <Registration {...props} {...this.state} />}
           />
           {localStorage.getItem("token") === null ? (
-            <Redirect to="/login" />
+            <Redirect to="/" />
           ) : (
-            <Nav userId={this.state.userId} Data={this.state.data} />
+            <Nav userId={this.state.userId} />
           )}
 
           <Route
@@ -78,7 +80,7 @@ class App extends React.Component {
             // exact
             // render={() => {
             //   return localStorage.getItem("token") === null ? (
-            //     <Redirect to="/login" />
+            //     <Redirect to="/" />
             //   ) : (
             //     <Profile  />
             //   );
@@ -92,14 +94,9 @@ class App extends React.Component {
             exact
             render={() => {
               return localStorage.getItem("token") === null ? (
-                <Redirect to="/login" />
+                <Redirect to="/" />
               ) : (
-                <Home
-                  userId={this.state.userId}
-                  updateMainProfile={() => {
-                    this.updateMainProfile();
-                  }}
-                />
+                <Home />
               );
             }}
           />

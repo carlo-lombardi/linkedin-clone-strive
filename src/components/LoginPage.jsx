@@ -21,11 +21,10 @@ export default class Login extends React.Component {
 
       if (response.ok) {
         const res = await response.json();
-        console.log(res);
+
         const accessToken = await res.accessToken;
 
         localStorage.setItem("token", accessToken);
-        console.log(localStorage);
 
         this.setState({
           password: "",

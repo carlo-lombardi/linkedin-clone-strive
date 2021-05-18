@@ -1,9 +1,8 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import { FaPen, FaPlus } from "react-icons/fa";
+import { FaPen } from "react-icons/fa";
 
 function Job(props) {
-  console.log("Exp from JOBs: ", props.userId);
   {
     return props.userId === undefined || null ? (
       <div></div>
@@ -11,7 +10,10 @@ function Job(props) {
       <div>
         {props.userId.map((experience) => (
           <>
-            <Card className="d-flex flex-row m-3 border-0 align-items-center">
+            <Card
+              key={experience._id}
+              className="d-flex flex-row m-3 border-0 align-items-center"
+            >
               <Card.Img
                 className="w-25% img-fluid m-1"
                 variant="left"

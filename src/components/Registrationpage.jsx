@@ -172,7 +172,7 @@ export default class Register extends React.Component {
             Register
           </button>
           <div className="linkWrap">
-            <Link className="link" to="/login">
+            <Link className="link" to="/">
               Already have an account?
             </Link>
           </div>

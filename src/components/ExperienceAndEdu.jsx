@@ -1,7 +1,7 @@
 import Experience from "./Experience";
 import Education from "./Education";
 import VoluntierExperience from "./VoluntierExperience";
-import { propTypes } from "react-bootstrap/esm/Image";
+// import { propTypes } from "react-bootstrap/esm/Image";
 
 export default function ExperienceAndEdu({ userId }) {
   return (

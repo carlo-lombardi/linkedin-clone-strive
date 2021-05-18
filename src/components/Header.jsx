@@ -1,12 +1,12 @@
 import React from "react";
 import { useState } from "react";
-import { Button, Col, Container, Image, Row } from "react-bootstrap";
-import { BsThreeDots } from "react-icons/bs";
+import { Button, Image } from "react-bootstrap";
+// import { BsThreeDots } from "react-icons/bs";
 import { AiOutlineFilePdf, AiOutlineEdit } from "react-icons/ai";
 import { GrDocumentCsv } from "react-icons/gr";
 import EditProfileModal from "./EditProfileModal";
 
-export default function (props) {
+export default function Header(props) {
   console.log("name in header", props.name);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);

@@ -16,15 +16,14 @@ export default function Profile(props) {
   const [experiences, updateExperiences] = useState([]);
   async function fetchData() {
     const dataExp = await getUserExperiences(props.match.params.profileID);
-
     updateExperiences(dataExp);
+
     updateProfileData(await getProfileById(props.match.params.profileID));
   }
   useEffect(async () => {
     await fetchData();
   }, [props.match.params.profileID]);
-  console.log("profileData in profile", profileData);
-  console.log("These are the experiences", experiences);
+
   return (
     <div className="container">
       <div className="row">

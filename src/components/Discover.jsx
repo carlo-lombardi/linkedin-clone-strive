@@ -1,7 +1,7 @@
 import React from "react";
 import { BsPlus } from "react-icons/bs";
 
-export default (props) => {
+export default function Discover(props) {
   return (
     <div className="bg-white border my-2 round-border">
       <div className="px-2 mt-1">
@@ -13,7 +13,7 @@ export default (props) => {
         <a href="#" className="no-decoration small-text">
           Events
         </a>
-        <BsPlus className="shade" style={{ borderRadius: "10px" }}/>
+        <BsPlus className="shade" style={{ borderRadius: "10px" }} />
       </div>
       <div className="px-2">
         <a href="#" className="no-decoration small-text">
@@ -27,4 +27,4 @@ export default (props) => {
       </div>
     </div>
   );
-};
+}

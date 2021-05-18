@@ -19,9 +19,25 @@ export async function getProfileById(id) {
     },
   });
   const data = await response.json();
-
   if (response.ok) {
     return data;
+  }
+}
+
+export async function getMyProfile() {
+  try {
+    let response = await fetch(`${process.env.REACT_APP_API_URL}/profile/me`, {
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      },
+    });
+    if (response.ok) {
+      let myProfile = await response.json();
+
+      return myProfile;
+    }
+  } catch (error) {
+    console.log(error);
   }
 }
 
@@ -119,7 +135,6 @@ export async function getUserExperiences(userId) {
   const data = await response.json();
 
   if (response.ok) {
-    console.log(data[0]);
     return data;
   }
 }

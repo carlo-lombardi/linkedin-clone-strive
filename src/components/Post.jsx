@@ -12,8 +12,6 @@ import { Link } from "react-router-dom";
 import EditPostModal from "./EditPostModal";
 import { useState } from "react";
 
-const currentUserID = "609b18ce3a78aa0f08b0b0ea";
-
 const epochs = [
   ["year", 31536000],
   ["month", 2592000],

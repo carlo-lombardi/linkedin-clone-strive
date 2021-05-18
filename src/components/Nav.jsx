@@ -93,7 +93,7 @@ export default function NavBar({ userId }) {
               <></>
             ) : (
               <ListGroup.Item className="p-0 mx-2 navItems">
-                <Link to={"/login"} onClick={() => localStorage.clear()}>
+                <Link to={"/"} onClick={() => localStorage.clear()}>
                   <Container className="mx-3 p-0 flex-column">
                     <FaUserCircle className="navIcons" />
                     <span className="navText">Sign Out</span>

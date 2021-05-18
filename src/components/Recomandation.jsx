@@ -9,7 +9,7 @@ export default function Recomandation() {
   useEffect(async () => {
     updateProfilesData(await getAllProfiles());
   }, []);
-  console.log("profilesData FROM RECOMENDATION", profilesData);
+
   function mapProfiles(limit) {
     return profilesData.slice(101, limit).map((profile) => {
       return (

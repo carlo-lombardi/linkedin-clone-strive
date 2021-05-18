@@ -4,21 +4,26 @@ import FooterLinks from "./FooterLinks";
 
 import PostsContainer from "./PostsContainer";
 import { useState, useEffect } from "react";
-import { getAllPosts, getProfileById } from "../functions/functions";
+import { getAllPosts, getMyProfile } from "../functions/functions";
 import UserInfo from "./UserInfo";
 import Discover from "./Discover";
 import CreatePost from "./CreatePost";
 
-export default function Home({ userId }) {
+export default function Home() {
   const [data, updateData] = useState([]);
   const [profileData, updateProfileData] = useState("");
+
   async function fetchData() {
     updateData(await getAllPosts());
-    updateProfileData(await getProfileById(userId));
+    updateProfileData(await getMyProfile());
   }
 
-  useEffect(async () => {
-    await fetchData();
+  useEffect(() => {
+    async function fetchAllData() {
+      updateData(await getAllPosts());
+      updateProfileData(await getMyProfile());
+    }
+    fetchAllData();
   }, []);
 
   return (
@@ -29,7 +34,7 @@ export default function Home({ userId }) {
           <UserInfo
             profileData={profileData}
             refreshData={fetchData}
-            userId={userId}
+            userId={profileData._id}
           />
           <Discover />
         </div>
@@ -38,12 +43,12 @@ export default function Home({ userId }) {
           <CreatePost
             profileData={profileData}
             refreshData={fetchData}
-            userId={userId}
+            userId={profileData._id}
           />
           <PostsContainer
             postsData={data}
             refreshData={fetchData}
-            currentUserId={userId}
+            currentUserId={profileData._id}
           />
         </div>
         <div className="right col col-12 col-md-4">

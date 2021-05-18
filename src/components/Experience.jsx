@@ -1,7 +1,7 @@
 import React from "react";
 import Job from "./Job";
-import { FaPen, FaPlus } from "react-icons/fa";
-import CardElement from "./Job";
+import { FaPlus } from "react-icons/fa";
+// import CardElement from "./Job";
 
 export default function Experience(props) {
   return (

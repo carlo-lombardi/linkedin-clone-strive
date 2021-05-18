@@ -8,12 +8,9 @@ import FormControl from "react-bootstrap/FormControl";
 import { useState } from "react";
 import { submitPostPicture } from "../functions/functions";
 
-export default (props) => {
+export default function CreatePost(props) {
   const [postText, setPostText] = useState("");
   const [postImage, setPostImage] = useState("");
-
-  const username = "slavkojos";
-  const userId = "609b18ce3a78aa0f08b0b0ea";
 
   async function handleSubmit(event) {
     if (event.key === "Enter" && postText !== "") {
@@ -95,4 +92,4 @@ export default (props) => {
       </div>
     </div>
   );
-};
+}
