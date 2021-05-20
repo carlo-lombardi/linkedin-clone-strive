@@ -40,10 +40,6 @@ class App extends React.Component {
     }
   };
 
-  updateMainProfile = async () => {
-    await getMyProfile();
-  };
-
   componentDidMount = async () => {
     if (localStorage.getItem("token") === null) {
       <Redirect to="/" />;
