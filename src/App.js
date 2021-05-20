@@ -69,8 +69,11 @@ class App extends React.Component {
             path="/register"
             render={(props) => <Registration {...props} {...this.state} />}
           />
-
-          <Nav userId={this.state.userId} />
+          {localStorage.getItem("token") === null ? (
+            <Redirect to="/" />
+          ) : (
+            <Nav userId={this.state.userId} />
+          )}
 
           <Route
             path="/profile/:profileID"

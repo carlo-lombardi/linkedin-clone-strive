@@ -33,12 +33,12 @@ const getDuration = (timeAgoInSeconds) => {
   }
 };
 
-const timeAgo = (date) => {
-  const timeAgoInSeconds = Math.floor((new Date() - new Date(date)) / 1000);
-  const { interval, epoch } = getDuration(timeAgoInSeconds);
-  const suffix = interval === 1 ? "" : "s";
-  return `${interval} ${epoch}${suffix} ago`;
-};
+// const timeAgo = (date) => {
+//   const timeAgoInSeconds = Math.floor((new Date() - new Date(date)) / 1000);
+//   const { interval, epoch } = getDuration(timeAgoInSeconds);
+//   const suffix = interval === 1 ? "" : "s";
+//   return `${interval} ${epoch}${suffix} ago`;
+// };
 
 export default function Post(props) {
   const [show, setShow] = useState(false);
@@ -67,9 +67,9 @@ export default function Post(props) {
           <div className="d-flex flex-column">
             <h6>{props.name + " " + props.surname}</h6>
             <small className="font-italic">@{props.username}</small>
-            {props.updatedTime !== undefined && props.updatedTime !== null && (
+            {/* {props.updatedTime !== undefined && props.updatedTime !== null && (
               <small>{timeAgo(postDate)}</small>
-            )}
+            )} */}
           </div>
         </Link>
         <div>
