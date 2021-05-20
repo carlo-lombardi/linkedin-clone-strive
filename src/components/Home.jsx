@@ -6,7 +6,7 @@ import PostsContainer from "./PostsContainer";
 import { useState, useEffect } from "react";
 import { getAllPosts, getMyProfile } from "../functions/functions";
 import UserInfo from "./UserInfo";
-import Discover from "./Discover";
+
 import CreatePost from "./CreatePost";
 
 export default function Home() {
@@ -36,7 +36,6 @@ export default function Home() {
             refreshData={fetchData}
             userId={profileData._id}
           />
-          <Discover />
         </div>
         <div className="mid col-12 col-md-6 mt-2">
           {/* mid columns go here  */}

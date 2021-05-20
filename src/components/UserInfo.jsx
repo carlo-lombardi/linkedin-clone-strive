@@ -1,12 +1,12 @@
 import React from "react";
-import { Button, Image } from "react-bootstrap";
+import { Image } from "react-bootstrap";
 import { TiUserAdd } from "react-icons/ti";
 import { BsFillBookmarkFill } from "react-icons/bs";
 import { Form } from "react-bootstrap";
 import { submitProfilePicture } from "../functions/functions";
 import { Link } from "react-router-dom";
 
-export default (props) => {
+export default function UserInfo(props) {
   async function changeProfilePicture(e) {
     console.log(e.target.files[0]);
     await submitProfilePicture(e.target.files[0], props.userId);
@@ -48,7 +48,7 @@ export default (props) => {
       </div>
       <div className="border-top p-2 shade">
         <a
-          href="#"
+          href="http://localhost:3001"
           className="text-left d-flex w-100 justify-content-between text-dark no-decoration"
         >
           <div className="d-flex flex-column">
@@ -63,7 +63,7 @@ export default (props) => {
         </a>
       </div>
       <div className="border-top p-2 shade">
-        <a href="#" className="text-dark no-decoration">
+        <a href="http://localhost:3001" className="text-dark no-decoration">
           <div className="d-flex flex-column">
             <span className="font-weight-light small-text">
               Access exclusive tools & insights
@@ -75,11 +75,11 @@ export default (props) => {
         </a>
       </div>
       <div className="d-flex flex-row border-top p-2 shade">
-        <a href="#" className="text-dark no-decoration">
+        <a href="http://localhost:3001" className="text-dark no-decoration">
           <BsFillBookmarkFill />
           <span className="small-text ml-1">My items</span>
         </a>
       </div>
     </div>
   );
-};
+}

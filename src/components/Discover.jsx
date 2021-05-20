@@ -1,7 +1,7 @@
 import React from "react";
 import { BsPlus } from "react-icons/bs";
 
-export default function Discover(props) {
+function Discover(props) {
   return (
     <div className="bg-white border my-2 round-border">
       <div className="px-2 mt-1">
