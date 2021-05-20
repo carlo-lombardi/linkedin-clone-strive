@@ -45,7 +45,7 @@ class App extends React.Component {
   };
 
   componentDidMount = async () => {
-    if (localStorage.getItem("token") === null || undefined) {
+    if (localStorage.getItem("token") === null) {
       <Redirect to="/" />;
     } else {
       const response = await getMyProfile();
@@ -69,25 +69,22 @@ class App extends React.Component {
             path="/register"
             render={(props) => <Registration {...props} {...this.state} />}
           />
-          {localStorage.getItem("token") === null ? (
-            <Redirect to="/" />
-          ) : (
-            <Nav userId={this.state.userId} />
-          )}
+
+          <Nav userId={this.state.userId} />
 
           <Route
-            // path="/profile/:profileID"
-            // exact
-            // render={() => {
-            //   return localStorage.getItem("token") === null ? (
-            //     <Redirect to="/" />
-            //   ) : (
-            //     <Profile  />
-            //   );
-            // }}
             path="/profile/:profileID"
             exact
-            component={Profile}
+            render={(props) => {
+              return localStorage.getItem("token") === null ? (
+                <Redirect to="/" />
+              ) : (
+                <Profile {...props} />
+              );
+            }}
+            // path="/profile/:profileID"
+            // exact
+            // component={Profile}
           />
           <Route
             path="/home"
